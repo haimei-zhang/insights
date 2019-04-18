@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@advanced/mosaic-styles/css/mosaic-no-fonts.css",
               "src/styles.scss"
             ],
             "scripts": []
