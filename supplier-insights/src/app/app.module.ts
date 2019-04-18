@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MosaicIconsComponent } from './components/mosaic-icons/mosaic-icons.component';
 import {CollapseModule} from "ngx-bootstrap";
+import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MosaicIconsComponent
+    MosaicIconsComponent,
+    KpiDashboardComponent
   ],
   imports: [
     BrowserModule,
