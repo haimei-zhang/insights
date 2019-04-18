@@ -1,0 +1,6 @@
+@import "../assets/libs/common";
+
+/* Fixed footer */
+.app-wrapper {
+  min-height: calc(100vh - #{$footer-height} - 70px);
+}
