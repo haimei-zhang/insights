@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'supplier-insights';
+  sidebarToggled = false;
+
+  toggleSidebar(): void {
+    this.sidebarToggled = !this.sidebarToggled;
+  }
 }

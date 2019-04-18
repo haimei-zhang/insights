@@ -17,8 +17,8 @@
     <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
       <ul class="navbar-sidebar-toggle nav">
         <li class="nav-item">
-          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button">
-            <svg class="icon">
+          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button"  (click)="toggleSidebar()">
+            <svg class="icon" [ngClass]="{'sidebar-toggled': sidebarToggled}">
               <use xlink:href="#arrow-left" href="#arrow-left"></use>
             </svg>
             <div>Menu</div>
@@ -47,7 +47,7 @@
   </nav>
   <div class="content-container">
     <!--sidebar-->
-    <div class="sidebar-container">
+    <div class="sidebar-container" [ngClass]="{'pull-left-toggle': sidebarToggled}">
       <div class="sidebar my-4">
         <div class="nav-sidebar w-100">
           <ul class="nav flex-column">
@@ -112,7 +112,7 @@
     </div>
 
     <!--main content-->
-    <div class="main-container">
+    <div class="main-container" [ngClass]="{'pull-left-toggle': sidebarToggled}">
       <div class="app-wrapper">
         <router-outlet></router-outlet>
       </div>
