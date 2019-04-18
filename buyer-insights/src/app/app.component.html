@@ -1,32 +1,34 @@
-<!-- application svgs -->
-<svg xmlns="http://www.w3.org/2000/svg" class="svg-hidden">
-  <symbol id="help" viewBox="0 0 32 32">
-    <g id="surface1"><path style=" " d="M 16 4 C 9.382813 4 4 9.382813 4 16 C 4 22.617188 9.382813 28 16 28 C 22.617188 28 28 22.617188 28 16 C 28 9.382813 22.617188 4 16 4 Z M 16 6 C 21.535156 6 26 10.464844 26 16 C 26 21.535156 21.535156 26 16 26 C 10.464844 26 6 21.535156 6 16 C 6 10.464844 10.464844 6 16 6 Z M 16 10 C 13.800781 10 12 11.800781 12 14 L 14 14 C 14 12.882813 14.882813 12 16 12 C 17.117188 12 18 12.882813 18 14 C 18 14.765625 17.507813 15.445313 16.78125 15.6875 L 16.375 15.8125 C 15.558594 16.082031 15 16.863281 15 17.71875 L 15 19 L 17 19 L 17 17.71875 L 17.40625 17.59375 C 18.945313 17.082031 20 15.621094 20 14 C 20 11.800781 18.199219 10 16 10 Z M 15 20 L 15 22 L 17 22 L 17 20 Z "></path></g>
-  </symbol>
-  <symbol id="speech_bubble" viewBox="0 0 32 32">
-    <g id="surface1"><path style=" " d="M 16 3 C 12.210938 3 8.765625 4.113281 6.21875 5.976563 C 3.667969 7.835938 2 10.507813 2 13.5 C 2 17.128906 4.472656 20.199219 8 22.050781 L 8 29 L 14.746094 23.9375 C 15.15625 23.96875 15.570313 24 16 24 C 19.789063 24 23.234375 22.886719 25.78125 21.027344 C 28.332031 19.164063 30 16.492188 30 13.5 C 30 10.507813 28.332031 7.835938 25.78125 5.976563 C 23.234375 4.113281 19.789063 3 16 3 Z M 16 5 C 19.390625 5 22.445313 6.015625 24.601563 7.589844 C 26.757813 9.164063 28 11.246094 28 13.5 C 28 15.753906 26.757813 17.835938 24.601563 19.410156 C 22.445313 20.984375 19.390625 22 16 22 C 15.507813 22 15.015625 21.972656 14.523438 21.925781 L 14.140625 21.894531 L 10 25 L 10 20.859375 L 9.421875 20.59375 C 6.070313 19.019531 4 16.386719 4 13.5 C 4 11.246094 5.242188 9.164063 7.398438 7.589844 C 9.554688 6.015625 12.609375 5 16 5 Z "></path></g>
-  </symbol>
-</svg>
-<!-- application svgs end -->
-  <div class="page">
-    <nav class="navbar navbar-dark navbar-expand-lg">
+<app-mosaic-icons></app-mosaic-icons>
+  <div class="page sidebar-visible">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg">
       <a href="#" class="navbar-brand">
         <img src="https://cdn.svc.oneadvanced.com/mosaic/2.0.0/img/logo.svg" alt="Advanced">
         <span class="tb-selectable tb-editable">Buyer Insights</span>
       </a>
-      <button class="hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation" data-toggle="collapse"
-        data-target="#navbar-minimum-collapse">
-        <span class="hamburger-label tb-selectable tb-editable tb-deletable">Menu</span>
+      <button class="hamburger hamburger--collapse menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="navigation" data-toggle="collapse"
+            data-target="#navbar-minimum-collapse">
+        <span class="hamburger-label">Menu</span>
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
       </button>
-      <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
-        <ul class="navbar-nav ml-auto">
+      <div class="navbar-collapse-sidebar" id="navbar-minimum-collapse">
+        <ul class="navbar-sidebar-toggle nav">
+          <li class="nav-item">
+            <a class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
+              <svg class="icon">
+                <title>Toggle menu</title>
+                <use xlink:href="#arrows_long_left" href="#arrows_long_left"></use>
+              </svg>
+              <div class="tb-selectable tb-editable tb-deletable">Menu</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="nav ml-auto">
           <li class="nav-item">
             <a href="#" class="nav-link tb-selectable tb-deletable">
               <svg class="icon tb-selectable tb-deletable">
-                <use xlink:href="#speech-bubble" href="#speech-bubble"></use>
+                <use xlink:href="#speech_bubble" href="#speech_bubble"></use>
               </svg>
               <div class="tb-selectable tb-editable">Feedback</div>
             </a>
@@ -43,21 +45,74 @@
       </div>
     </nav>
     <div class="content-container">
-      <div class="main-container">
-        <section>
-          <div class="main-inner py-4 px-2">
-            <div class="container-fluid">
-              <div id="demo-content" class="d-flex align-items-center justify-content-center">
-                <p class="mb-0">Page content goes here</p>
-              </div>
-            </div>
+      <!--sidebar-->
+      <div class="sidebar-container" [ngClass]="{'pull-left-toggle': sidebarToggled}">
+        <div class="sidebar my-4">
+          <div class="nav-sidebar w-100">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>KPI Dashboard</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Purchase Orders</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>On/Off Catalogue Orders</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Invoices</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Top Categories</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Top Customers</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Top Products</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Market Share</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Search Insights</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Search Term Insights</div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="d-flex nav-link">
+                  <div>Discount on List Price</div>
+                </a>
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </div>
+  
+      <!--main content-->
+      <div class="main-container" [ngClass]="{'pull-left-toggle': sidebarToggled}">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-  <script type="text/javascript" src="https://cdn.svc.oneadvanced.com/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdn.svc.oneadvanced.com/popper.js/1.14.3/popper.min.js"></script>
-  <script type="text/javascript" src="https://cdn.svc.oneadvanced.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-<router-outlet></router-outlet>
