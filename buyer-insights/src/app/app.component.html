@@ -112,7 +112,10 @@
   
       <!--main content-->
       <div class="main-container" [ngClass]="{'pull-left-toggle': sidebarToggled}">
-        <router-outlet></router-outlet>
+        <div class="app-wrapper">
+          <router-outlet></router-outlet>
+        </div>
+        <buyer-insights-footer></buyer-insights-footer>
       </div>
     </div>
   </div>
