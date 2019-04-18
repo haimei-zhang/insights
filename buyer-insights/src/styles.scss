@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'assets/libs/colors';
+@import 'assets/libs/common';
+
+$handle-width: 6;
+
+/* width */
+::-webkit-scrollbar {
+  width: #{$handle-width}px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #171717; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: #{$handle-width / 2}px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5); 
+}
