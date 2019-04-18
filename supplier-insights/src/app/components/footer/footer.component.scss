@@ -1,0 +1,13 @@
+@import '../../../assets/libs/common';
+
+.footer {
+  height: $footer-height;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 13px; /* in case flexbox isn't supported */
+
+  .footer-logo, .footer-text {
+    margin-left: 15px;
+  }
+}

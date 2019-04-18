@@ -15,6 +15,16 @@
     </span>
     </button>
     <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
+      <ul class="navbar-sidebar-toggle nav">
+        <li class="nav-item">
+          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button">
+            <svg class="icon">
+              <use xlink:href="#arrow-left" href="#arrow-left"></use>
+            </svg>
+            <div>Menu</div>
+          </a>
+        </li>
+      </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a href="#" class="nav-link">
@@ -103,7 +113,10 @@
 
     <!--main content-->
     <div class="main-container">
-      <router-outlet></router-outlet>
+      <div class="app-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+      <supplier-insights-footer></supplier-insights-footer>
     </div>
   </div>
 </div>
