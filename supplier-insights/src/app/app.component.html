@@ -1,21 +1,111 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<supplier-insights-mosaic-icons></supplier-insights-mosaic-icons>
+<div class="page sidebar-visible">
+  <!--main navbar-->
+  <nav class="navbar fixed-top navbar-dark navbar-expand-lg">
+    <a href="#" class="navbar-brand">
+      <img src="https://cdn.svc.oneadvanced.com/mosaic/2.0.0/img/logo.svg" alt="Advanced">
+      <span>Supplier Insights</span>
+    </a>
+    <button class="hamburger hamburger--collapse" type="button" aria-label="Toggle navigation" aria-controls="navigation" data-toggle="collapse"
+            data-target="#navbar-minimum-collapse">
+      <span class="hamburger-label">Menu</span>
+      <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <svg class="icon">
+              <use xlink:href="#comment" href="#comment"></use>
+            </svg>
+            <div>Feedback</div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <svg class="icon mr-lg-0 mr-xl-1">
+              <use xlink:href="#question-circle" href="#question-circle"></use>
+            </svg>
+            <div class='d-block d-lg-none d-xl-block'>Help</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-container">
+    <!--sidebar-->
+    <div class="sidebar-container">
+      <div class="sidebar my-4">
+        <div class="nav-sidebar w-100">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>KPI Dashboard</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Purchase Orders</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>On/Off Catalogue Orders</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Invoices</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Top Categories</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Top Customers</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Top Products</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Market Share</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Search Insights</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Search Term Insights</div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="d-flex nav-link">
+                <div>Discount on List Price</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<router-outlet></router-outlet>
+    <!--main content-->
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
