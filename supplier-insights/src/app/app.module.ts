@@ -11,6 +11,7 @@ import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.
 import { FooterComponent } from './components/footer/footer.component';
 import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { OnOffCatalogueOrdersComponent } from './components/on-off-catalogue-orders/on-off-catalogue-orders.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     KpiDashboardComponent,
     FooterComponent,
     PurchaseOrdersComponent,
-    PaginationComponent
+    PaginationComponent,
+    OnOffCatalogueOrdersComponent
   ],
   imports: [
     BrowserModule,
