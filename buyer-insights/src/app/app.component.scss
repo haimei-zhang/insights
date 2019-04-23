@@ -8,3 +8,11 @@
 .menu-toggle {
   cursor: pointer;
 }
+
+/*menu toggle*/
+.menu-toggle .icon {
+  transition: .3s ease;
+  &.sidebar-toggled {
+    transform: rotate(180deg);
+  }
+}

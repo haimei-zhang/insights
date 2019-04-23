@@ -7,7 +7,7 @@
       <img src="../assets/images/advanced-logo.svg" alt="Advanced">
       <span>Supplier Insights</span>
     </a>
-    <button class="hamburger hamburger--collapse" type="button" aria-label="Toggle navigation" aria-controls="navigation" data-toggle="collapse"
+    <button class="hamburger hamburger--collapse menu-toggle" type="button" aria-label="Toggle navigation" aria-controls="navigation" data-toggle="collapse"
             data-target="#navbar-minimum-collapse">
       <span class="hamburger-label">Menu</span>
       <span class="hamburger-box">
@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
       <ul class="navbar-sidebar-toggle nav">
         <li class="nav-item">
-          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button"  (click)="toggleSidebar()">
+          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
             <svg class="icon" [ngClass]="{'sidebar-toggled': sidebarToggled}">
               <use xlink:href="#arrow-left" href="#arrow-left"></use>
             </svg>
