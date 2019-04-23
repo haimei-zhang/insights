@@ -17,8 +17,8 @@
     <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
       <ul class="navbar-sidebar-toggle nav">
         <li class="nav-item">
-          <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
-            <svg class="icon" [ngClass]="{'sidebar-toggled': sidebarToggled}">
+          <a href="javascript:void(0)" [ngClass]="{'is-active': sidebarToggled}" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
+            <svg class="icon">
               <use xlink:href="#arrow-left" href="#arrow-left"></use>
             </svg>
             <div>Menu</div>
@@ -57,7 +57,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="d-flex nav-link">
+              <a href="#" class="d-flex nav-link" routerLink="/purchase-orders">
                 <div>Purchase Orders</div>
               </a>
             </li>
@@ -92,14 +92,16 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="d-flex nav-link">
+              <a role="button" data-toggle="collapse" aria-expanded="false" class="d-flex nav-link" aria-controls="search-term-insights" (click)="showSidebar.searchInsights = !showSidebar.searchInsights">
                 <div>Search Insights</div>
               </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="d-flex nav-link">
-                <div>Search Term Insights</div>
-              </a>
+              <div class="nav-item-collapse collapse" id="search-term-insights" [ngClass]="{'show': showSidebar.searchInsights}">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link d-flex" role="button" href="#">Search Term Insights</a>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a href="#" class="d-flex nav-link">

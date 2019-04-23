@@ -15,8 +15,8 @@
       <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
         <ul class="navbar-sidebar-toggle nav">
           <li class="nav-item">
-            <a href="javascript:void(0)" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
-              <svg class="icon" [ngClass]="{'sidebar-toggled': sidebarToggled}">
+            <a href="javascript:void(0)" [ngClass]="{'is-active': sidebarToggled}" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
+              <svg class="icon">
                 <title>Toggle menu</title>
                 <use xlink:href="#arrows_long_left" href="#arrows_long_left"></use>
               </svg>

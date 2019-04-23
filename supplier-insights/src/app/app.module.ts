@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MosaicIconsComponent } from './components/mosaic-icons/mosaic-icons.component';
 import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MosaicIconsComponent,
     KpiDashboardComponent,
-    FooterComponent
+    FooterComponent,
+    PurchaseOrdersComponent
   ],
   imports: [
     BrowserModule,

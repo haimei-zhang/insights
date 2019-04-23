@@ -49,7 +49,7 @@ export class KpiDashboardComponent implements OnInit {
           type: 'shadow'
         }
       },
-      grid: {containLabel: true, left: 0, right: 0, bottom: 0, top: 0},
+      grid: {containLabel: true, left: '3%', right: '3%', bottom: 0, top: '3%'},
       xAxis: {name: 'amount'},
       yAxis: {type: 'category', axisLabel: {rotate: 0, index: 999, inside: true}, data: [123,456,678,789,890,567,678], name: 'categories'},
       series: [
@@ -81,10 +81,10 @@ export class KpiDashboardComponent implements OnInit {
         }
       },
       grid: {
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
+        left: '3%',
+        right: '3%',
+        bottom: '3%',
+        top: '3%',
         containLabel: true
       },
       xAxis: {
@@ -117,10 +117,10 @@ export class KpiDashboardComponent implements OnInit {
         }
       },
       grid: {
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
+        left: '3%',
+        right: '3%',
+        bottom: '3%',
+        top: '3%',
         containLabel: true
       },
       xAxis: {
