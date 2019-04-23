@@ -1,0 +1,9 @@
+<div class="d-inline-block">
+  <pagination [totalItems]="totalItems" [(ngModel)]="page" [itemsPerPage]="itemsPerPage" [maxSize]="maxSize" (pageChanged)="changePage($event)" [boundaryLinks]="true" firstText="&laquo;" lastText="&raquo;" previousText="&#8249;" nextText="&#8250;"></pagination>
+</div>
+<select name="" id="" class="form-control d-inline-block" (change)="pageSizeChanged($event.target.value)">
+  <option value="10">10</option>
+  <option value="25">25</option>
+  <option value="50">50</option>
+  <option value="{{totalItems}}">All</option>
+</select>

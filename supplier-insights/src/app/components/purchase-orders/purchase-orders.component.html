@@ -62,9 +62,13 @@
       <div class="card-body">
         <h4 class="card-title">Purchase Order List</h4>
         <div class="card-text">
-          <div class="text-right mb-2">
-            <button class="btn btn-primary mr-2">Export Purchase Orders (.csv)</button>
-            <button class="btn btn-primary">Export Order Lines (.csv)</button>
+          <div class="mb-2">
+            <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+            (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+            <div class="float-right">
+              <button class="btn btn-primary mr-2">Export Purchase Orders (.csv)</button>
+              <button class="btn btn-primary">Export Order Lines (.csv)</button>
+            </div>
           </div>
           <table class="table table-bordered">
             <tr>

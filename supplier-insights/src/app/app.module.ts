@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+
+import { BsDropdownModule, PaginationModule } from "ngx-bootstrap";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +10,7 @@ import { MosaicIconsComponent } from './components/mosaic-icons/mosaic-icons.com
 import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +18,15 @@ import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-o
     MosaicIconsComponent,
     KpiDashboardComponent,
     FooterComponent,
-    PurchaseOrdersComponent
+    PurchaseOrdersComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    PaginationModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
