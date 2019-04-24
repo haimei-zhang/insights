@@ -21,12 +21,12 @@ export class OnOffCatalogueOrdersComponent implements OnInit {
       xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [{
         name: 'On Catalogue',
-        data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
+        data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
         type: 'line'
       },
         {
           name: 'Off Catalogue',
-          data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
+          data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
           type: 'line'
         }]
     };

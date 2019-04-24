@@ -18,7 +18,7 @@ export class TopCustomersComponent implements OnInit {
       height: '400px',
       chartId: 'top-customers-by-order-value-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
-      series: [18203, 23489, 29034, 104970, 131744, 630230]
+      series: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
     };
   }
 
@@ -28,7 +28,7 @@ export class TopCustomersComponent implements OnInit {
       height: '400px',
       chartId: 'top-customers-by-purchase-orders-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
-      series: [18203, 23489, 29034, 104970, 131744, 630230]
+      series: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
     };
   }
 

@@ -41,7 +41,6 @@ export class StackBarChartComponent implements OnInit, AfterViewInit {
         left: '3%',
         right: '3%',
         bottom: '3%',
-        top: '3%',
         containLabel: true
       },
       xAxis: {

@@ -20,7 +20,7 @@ export class KpiDashboardComponent implements OnInit {
       height: '210px',
       chartId: 'top-categories-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
-      series: [18203, 23489, 29034, 104970, 131744, 630230]
+      series: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
     };
   }
 
@@ -30,7 +30,7 @@ export class KpiDashboardComponent implements OnInit {
       chartId: 'top-products-chart',
       height: '210px',
       yAxis: ['test1','test2','test3','test4','test5','all'],
-      series: [18203, 23489, 29034, 104970, 131744, 630230]
+      series: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
     };
   }
 
@@ -40,7 +40,7 @@ export class KpiDashboardComponent implements OnInit {
       chartId: 'top-customers-chart',
       height: '210px',
       yAxis: ['test1','test2','test3','test4','test5','all'],
-      series: [18203, 104970, 29034, 23489, 131744, 630230]
+      series: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100]
     };
   }
 
@@ -99,12 +99,12 @@ export class KpiDashboardComponent implements OnInit {
       xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [{
         name: 'This Year',
-        data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
+        data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
         type: 'line'
       },
         {
           name: 'Last Year',
-          data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
+          data: [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100],
           type: 'line'
         }]
     };
