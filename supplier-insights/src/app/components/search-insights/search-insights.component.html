@@ -1,3 +1,144 @@
-<p>
-  search-insights works!
-</p>
+<div class="invoices-orders">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Search Insights</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Search Insights</h4>
+            <div class="card-text">
+              <div [ngStyle]="{'min-height': minHeight}">
+                <table class="table table-borderless text-center table-layout-fixed">
+                  <tr>
+                    <td class="border-right">Total Searches</td>
+                    <td class="border-right">Searches Returning Your Products</td>
+                    <td class="border-right">Searches Returning Your Product First</td>
+                  </tr>
+                  <tr>
+                    <th class="border-right"><h3>6</h3></th>
+                    <th class="border-right"><h3>1</h3></th>
+                    <th class="border-right"><h3>1</h3></th>
+                  </tr>
+                  <tr>
+                    <th class="border-right text-danger">
+                      <h3>-76.00%
+                        <svg width="18" height="18">
+                          <use href="#arrow-alt-circle-down" xlink:href="#arrow-alt-circle-up"></use>
+                        </svg>
+                      </h3>
+                    </th>
+                    <th class="border-right text-danger">
+                      <h3>-88.89%
+                        <svg width="18" height="18">
+                          <use href="#arrow-alt-circle-down" xlink:href="#arrow-alt-circle-up"></use>
+                        </svg>
+                      </h3>
+                    </th>
+                    <th class="border-right text-danger">
+                      <h3>-88.89%
+                        <svg width="18" height="18">
+                          <use href="#arrow-alt-circle-down" xlink:href="#arrow-alt-circle-up"></use>
+                        </svg>
+                      </h3>
+                    </th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Search Term Insights</h4>
+            <div class="card-text">
+              <div [ngStyle]="{'min-height': minHeight}">
+                <table class="table table-borderless text-center table-layout-fixed">
+                  <tr>
+                    <td class="border-right">Distinct Search Queries</td>
+                    <td class="border-right">Top Search Term for Your Products</td>
+                    <td class="border-right">Top Search Term</td>
+                  </tr>
+                  <tr>
+                    <th class="border-right"><h3>3</h3></th>
+                    <th class="border-right"><h3>test</h3></th>
+                    <th class="border-right"><h3>swl_del.09</h3></th>
+                  </tr>
+                  <tr>
+                    <th class="border-right text-danger">
+                      <h3>-76.00%
+                        <svg width="18" height="18">
+                          <use href="#arrow-alt-circle-down" xlink:href="#arrow-alt-circle-up"></use>
+                        </svg>
+                      </h3>
+                    </th>
+                    <th class="border-right"></th>
+                    <th class="border-right"></th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <supplier-insights-line-chart [options]="initWeeklySearchesChart()"></supplier-insights-line-chart>
+    <hr>
+    <h2>Search Journey</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-pie-chart [options]="initTypeOfSearchChart()"></supplier-insights-pie-chart>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-pie-chart [options]="initSortByUsageChart()"></supplier-insights-pie-chart>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-pie-chart [options]="initSearchFilterUsageChart()"></supplier-insights-pie-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Searches by Customer</h4>
+        <div class="card-text">
+          <div class="mb-2">
+            <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                          (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+            <!--<div class="float-right">
+              <button class="btn btn-primary">Export Table</button>
+            </div>-->
+          </div>
+          <table class="table table-bordered">
+            <tr class="bg-light">
+              <th>Customer Name</th>
+              <th>Total Search Trend</th>
+              <th>Searches that Returned Your Products</th>
+              <th>Searched that Returned Your Products Trend</th>
+            </tr>
+            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+              <td>Customer 1</td>
+              <td class="text-success">13.17%
+                <svg width="18" height="18">
+                  <use href="#arrow-alt-circle-up" xlink:href="#arrow-alt-circle-up"></use>
+                </svg>
+              </td>
+              <td>5,618</td>
+              <td class="text-success">13.17%
+                <svg width="18" height="18">
+                  <use href="#arrow-alt-circle-up" xlink:href="#arrow-alt-circle-up"></use>
+                </svg>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

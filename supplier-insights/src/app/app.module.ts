@@ -26,6 +26,7 @@ import { OrderTableComponent } from './elements/order-table/order-table.componen
 import { BarChartComponent } from './elements/bar-chart/bar-chart.component';
 import { LineChartComponent } from './elements/line-chart/line-chart.component';
 import { StackBarChartComponent } from './elements/stack-bar-chart/stack-bar-chart.component';
+import { PieChartComponent } from './elements/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { StackBarChartComponent } from './elements/stack-bar-chart/stack-bar-cha
     OrderTableComponent,
     BarChartComponent,
     LineChartComponent,
-    StackBarChartComponent
+    StackBarChartComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
