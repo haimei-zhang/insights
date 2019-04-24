@@ -35,16 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">
-          Weekly Order Value - On / Off Catalogue
-        </h4>
-        <div class="card-text">
-          <div id="weekly-order-value-chart" style="width: 100%; min-height: 400px"></div>
-        </div>
-      </div>
-    </div>
+    <supplier-insights-big-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-big-chart>
     <div class="card">
       <div class="card-body">
         <div class="card-title">On and Off Catalogue Revenue by Customer</div>
