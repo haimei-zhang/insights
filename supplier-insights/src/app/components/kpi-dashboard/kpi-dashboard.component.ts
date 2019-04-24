@@ -19,8 +19,8 @@ export class KpiDashboardComponent implements OnInit {
       title: 'Top Categories',
       height: '210px',
       chartId: 'top-categories-chart',
-      yAxis: [123,456,678,789,890,567,678],
-      series: [18203, 23489, 29034, 104970, 131744, 630230, 98756]
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
     };
   }
 

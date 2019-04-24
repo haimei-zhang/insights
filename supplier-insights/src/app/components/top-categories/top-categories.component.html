@@ -51,33 +51,24 @@
             <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
                                           (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
             <div class="float-right">
-              <button class="btn btn-primary">Export Invoices (.csv)</button>
+              <button class="btn btn-primary">Export Table</button>
             </div>
           </div>
           <table class="table table-bordered">
-            <tr>
-              <th>Invoice Number</th>
-              <th>Buyer Company</th>
-              <th>Document Type</th>
-              <th>Invoice Type</th>
-              <th>Order Number</th>
-              <th>Invoice Date</th>
-              <th>Date Received by SWL</th>
-              <th>Total Value</th>
-              <th>Invoice Status</th>
-              <th>Currency</th>
+            <tr class="bg-light">
+              <th>Category Name</th>
+              <th>Order Value</th>
+              <th>Order Lines</th>
             </tr>
             <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
-              <td><a href="">24042019</a></td>
-              <td>Regression Zelease Basket Test Company</td>
-              <td>Invoice</td>
-              <td>Full</td>
-              <td>14695661-1</td>
-              <td>2019/02/14</td>
-              <td>2019/02/14 08:08:23</td>
-              <td>6.98</td>
-              <td>Created</td>
-              <td>GBP</td>
+              <td>Microcentrifuge Tubes</td>
+              <td>5,618.25</td>
+              <td>70</td>
+            </tr>
+            <tr class="btn-light">
+              <th>Totals:</th>
+              <th>8101.56</th>
+              <th>104</th>
             </tr>
           </table>
         </div>

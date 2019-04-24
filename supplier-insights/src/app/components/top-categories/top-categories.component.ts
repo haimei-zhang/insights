@@ -14,53 +14,21 @@ export class TopCategoriesComponent implements OnInit {
 
   initTopCategoriesByOrderValueChart(): any {
     return {
-      title: 'Weekly Invoice Value - Sent / Rejected',
-      chartId: 'weekly-invoice-value-chart',
-      legend: {data: ['Invoices Sent', 'Invoices Rejected']},
-      xAxis: {
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      },
-      yAxis: {
-        name: 'order value',
-        type: 'value'
-      },
-      series: [{
-        name: 'Invoices Sent',
-        data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
-        type: 'line'
-      },
-        {
-          name: 'Invoices Rejected',
-          data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
-          type: 'line'
-        }]
+      title: 'Top Categories by Order Value',
+      height: '400px',
+      chartId: 'top-categories-by-order-value-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
     };
   }
 
   initTopCategoriesByOrderLinesChart(): any {
     return {
-      title: 'Weekly Invoice Value - Sent / Rejected',
-      chartId: 'weekly-invoice-value-chart',
-      legend: {data: ['Invoices Sent', 'Invoices Rejected']},
-      xAxis: {
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      },
-      yAxis: {
-        name: 'order value',
-        type: 'value'
-      },
-      series: [{
-        name: 'Invoices Sent',
-        data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
-        type: 'line'
-      },
-        {
-          name: 'Invoices Rejected',
-          data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
-          type: 'line'
-        }]
+      title: 'Top Categories by Order Lines',
+      height: '400px',
+      chartId: 'top-categories-by-order-lines-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
     };
   }
 
