@@ -1,3 +1,87 @@
-<p>
-  top-categories works!
-</p>
+<div class="invoices-orders">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Invoices</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <label for="customer"><b>Customer</b></label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="date-period"><b>Date Period</b></label>
+            <input type="text" class="form-control" id="date-period" name="date-period">
+          </div>
+          <div class="col-3">
+            <label for="currency"><b>Currency</b></label>
+            <select name="currency" id="currency" class="form-control">
+              <option value="">£</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label class="d-block">&nbsp;</label>
+            <button class="btn btn-info">Apply filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <supplier-insights-bar-chart [options]="initTopCategoriesByOrderValueChart()"></supplier-insights-bar-chart>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <supplier-insights-bar-chart [options]="initTopCategoriesByOrderLinesChart()"></supplier-insights-bar-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Invoice List</h4>
+        <div class="card-text">
+          <div class="mb-2">
+            <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                          (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+            <div class="float-right">
+              <button class="btn btn-primary">Export Invoices (.csv)</button>
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <tr>
+              <th>Invoice Number</th>
+              <th>Buyer Company</th>
+              <th>Document Type</th>
+              <th>Invoice Type</th>
+              <th>Order Number</th>
+              <th>Invoice Date</th>
+              <th>Date Received by SWL</th>
+              <th>Total Value</th>
+              <th>Invoice Status</th>
+              <th>Currency</th>
+            </tr>
+            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+              <td><a href="">24042019</a></td>
+              <td>Regression Zelease Basket Test Company</td>
+              <td>Invoice</td>
+              <td>Full</td>
+              <td>14695661-1</td>
+              <td>2019/02/14</td>
+              <td>2019/02/14 08:08:23</td>
+              <td>6.98</td>
+              <td>Created</td>
+              <td>GBP</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

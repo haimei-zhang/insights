@@ -2,7 +2,7 @@
   <div class="card-body">
     <h4 class="card-title">{{options.title}}</h4>
     <div class="card-text">
-      <div [id]="options.chartId" style="width:100%; min-height: 210px"></div>
+      <div [id]="options.chartId" style="width:100%" [ngStyle]="{'min-height': options.height}"></div>
     </div>
   </div>
 </div>

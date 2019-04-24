@@ -22,9 +22,10 @@ import { ListPriceDiscountComponent } from './components/list-price-discount/lis
 
 import { PaginationComponent } from './elements/pagination/pagination.component';
 import { MosaicIconsComponent } from './elements/mosaic-icons/mosaic-icons.component';
-import { BigChartComponent } from './elements/big-chart/big-chart.component';
-import { SmallChartComponent } from './elements/small-chart/small-chart.component';
 import { OrderTableComponent } from './elements/order-table/order-table.component';
+import { BarChartComponent } from './elements/bar-chart/bar-chart.component';
+import { LineChartComponent } from './elements/line-chart/line-chart.component';
+import { StackBarChartComponent } from './elements/stack-bar-chart/stack-bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,10 @@ import { OrderTableComponent } from './elements/order-table/order-table.componen
     ListPriceDiscountComponent,
     MosaicIconsComponent,
     PaginationComponent,
-    BigChartComponent,
-    SmallChartComponent,
-    OrderTableComponent
+    OrderTableComponent,
+    BarChartComponent,
+    LineChartComponent,
+    StackBarChartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,19 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import * as echarts from "echarts";
 
 @Component({
-  selector: 'supplier-insights-big-chart',
-  templateUrl: './big-chart.component.html',
-  styleUrls: ['./big-chart.component.scss']
+  selector: 'supplier-insights-bar-chart',
+  templateUrl: './bar-chart.component.html',
+  styleUrls: ['./bar-chart.component.scss']
 })
-export class BigChartComponent implements OnInit {
+export class BarChartComponent implements OnInit, AfterViewInit {
+
   @Input() options = {
     title: 'Loading...',
+    height: '210px',
     chartId: '',
-    tooltipType: 'line',
-    legend: {},
-    xAxis: {},
-    yAxis: {},
+    legend: [],
+    yAxis: [],
     series: []
   };
 
@@ -33,10 +33,10 @@ export class BigChartComponent implements OnInit {
       tooltip: {
         trigger: 'axis',
         axisPointer: {
-          type: this.options.tooltipType
+          type: 'shadow'
         }
       },
-      legend: this.options.legend,
+      legend: {data: this.options.legend},
       grid: {
         left: '3%',
         right: '3%',
@@ -44,10 +44,13 @@ export class BigChartComponent implements OnInit {
         top: '3%',
         containLabel: true
       },
-      xAxis: this.options.xAxis,
-      yAxis: this.options.yAxis,
-      series: this.options.series
+      xAxis: {type: 'value'},
+      yAxis: {type: 'category', data: this.options.yAxis},
+      series: (() => {
+        return [{type: 'bar', data: this.options.series}]
+      })()
     };
     eCharts.setOption(option);
   }
+
 }

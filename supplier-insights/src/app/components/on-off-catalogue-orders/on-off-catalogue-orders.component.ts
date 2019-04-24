@@ -16,15 +16,9 @@ export class OnOffCatalogueOrdersComponent implements OnInit {
     return {
       title: 'Weekly Order Value - On / Off Catalogue',
       chartId: 'weekly-order-value-chart',
-      legend: {data: ['On Catalogue', 'Off Catalogue']},
-      xAxis: {
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      },
-      yAxis: {
-        name: 'order value',
-        type: 'value'
-      },
+      height: '400px',
+      legend: ['On Catalogue', 'Off Catalogue'],
+      xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [{
         name: 'On Catalogue',
         data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],

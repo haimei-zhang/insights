@@ -17,14 +17,10 @@ export class KpiDashboardComponent implements OnInit {
   initTopCategoriesChart(): any {
     return {
       title: 'Top Categories',
+      height: '210px',
       chartId: 'top-categories-chart',
-      tooltipType: 'shadow',
-      xAxis: {type: 'value',},
-      yAxis: {type: 'category', data: [123,456,678,789,890,567,678]},
-      series: [{
-        type: 'bar',
-        data: [18203, 23489, 29034, 104970, 131744, 630230, 98756]
-      }]
+      yAxis: [123,456,678,789,890,567,678],
+      series: [18203, 23489, 29034, 104970, 131744, 630230, 98756]
     };
   }
 
@@ -32,13 +28,9 @@ export class KpiDashboardComponent implements OnInit {
     return {
       title: 'Top Products',
       chartId: 'top-products-chart',
-      tooltipType: 'shadow',
-      xAxis: {type: 'value'},
-      yAxis: {type: 'category', data: ['test1','test2','test3','test4','test5','all']},
-      series: [{
-        type: 'bar',
-        data: [18203, 23489, 29034, 104970, 131744, 630230]
-      }]
+      height: '210px',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
     };
   }
 
@@ -46,13 +38,9 @@ export class KpiDashboardComponent implements OnInit {
     return {
       title: 'Top Customers',
       chartId: 'top-customers-chart',
-      tooltipType: 'shadow',
-      xAxis: {type: 'value'},
-      yAxis: {type: 'category', data: ['test1','test2','test3','test4','test5','all']},
-      series: [{
-        type: 'bar',
-        data: [18203, 104970, 29034, 23489, 131744, 630230]
-      }]
+      height: '210px',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 104970, 29034, 23489, 131744, 630230]
     };
   }
 
@@ -60,23 +48,16 @@ export class KpiDashboardComponent implements OnInit {
     return {
       title: 'Market Share by Category',
       chartId: 'market-share-by-category-chart',
-      tooltipType: 'shadow',
-      legend: {
-        data: ['data 1','data 2']
-      },
-      xAxis: {
-        type : 'category',
-        splitLine: {show:false},
-        data :  function (){
+      height: '210px',
+      legend: ['data 1','data 2'],
+      xAxis: (() => {
           let list = [];
           for (let i = 1; i <= 11; i++) {
             list.push(i + ' Nov');
           }
           return list;
-        }()
-      },
-      yAxis: {type: 'value'},
-      series: [
+        })(),
+      series:[
         {
           name: 'Total',
           type: 'bar',
@@ -113,14 +94,9 @@ export class KpiDashboardComponent implements OnInit {
     return {
       title: 'Weekly Order Value - Completed Orders',
       chartId: 'weekly-order-value-chart',
-      legend: {data: ['This Year', 'Last Year']},
-      xAxis: {
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      },
-      yAxis: {
-        type: 'value'
-      },
+      height: '400px',
+      legend: ['This Year', 'Last Year'],
+      xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [{
         name: 'This Year',
         data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
