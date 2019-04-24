@@ -1,3 +1,68 @@
-<p>
-  market-share works!
-</p>
+<div class="invoices-orders">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Market Share</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <label for="customer"><b>Customer</b></label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="category"><b>Category</b></label>
+            <input type="text" class="form-control" id="category" name="category">
+          </div>
+          <div class="col-3">
+            <label for="currency"><b>Currency</b></label>
+            <select name="currency" id="currency" class="form-control">
+              <option value="">£</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label class="d-block">&nbsp;</label>
+            <button class="btn btn-info">Apply filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <supplier-insights-stack-bar-chart [options]="initMarketShareByCategoryChart()"></supplier-insights-stack-bar-chart>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Market Share by Category</h4>
+        <div class="card-text">
+          <div class="mb-2">
+            <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                          (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+            <div class="float-right">
+              <button class="btn btn-primary">Export Table</button>
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <tr class="bg-light">
+              <th>Superdomain</th>
+              <th>Category</th>
+              <th>Order Value - Last 12 Months</th>
+              <th>Order Lines - Last 12 Months</th>
+            </tr>
+            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+              <td>Laboratory Consumables and Supplies</td>
+              <td><a href="">Microcentrifuge Tubes</a></td>
+              <td>5,618.25</td>
+              <td><span class="label label-info">Leader</span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
