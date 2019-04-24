@@ -12,4 +12,31 @@ export class TopCategoriesComponent implements OnInit {
   ngOnInit() {
   }
 
+  initTopCategoriesByOrderValueChart(): any {
+    return {
+      title: 'Top Categories by Order Value',
+      height: '400px',
+      chartId: 'top-categories-by-order-value-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
+    };
+  }
+
+  initTopCategoriesByOrderLinesChart(): any {
+    return {
+      title: 'Top Categories by Order Lines',
+      height: '400px',
+      chartId: 'top-categories-by-order-lines-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [18203, 23489, 29034, 104970, 131744, 630230]
+    };
+  }
+
+  changePage(page, execute): void {
+    console.log(page);
+  }
+
+  setPageSize(page): void {
+    console.log(page)
+  }
 }

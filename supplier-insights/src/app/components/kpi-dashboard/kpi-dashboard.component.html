@@ -3,13 +3,13 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-small-chart [options]="initTopCategoriesChart()"></supplier-insights-small-chart>
+        <supplier-insights-bar-chart [options]="initTopCategoriesChart()"></supplier-insights-bar-chart>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-small-chart [options]="initTopProductsChart()"></supplier-insights-small-chart>
+        <supplier-insights-bar-chart [options]="initTopProductsChart()"></supplier-insights-bar-chart>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-small-chart [options]="initTopCustomersChart()"></supplier-insights-small-chart>
+        <supplier-insights-bar-chart [options]="initTopCustomersChart()"></supplier-insights-bar-chart>
       </div>
     </div>
     <hr>
@@ -63,12 +63,12 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <supplier-insights-small-chart [options]="initMarketShareByCategoryChart()"></supplier-insights-small-chart>
+        <supplier-insights-stack-bar-chart [options]="initMarketShareByCategoryChart()"></supplier-insights-stack-bar-chart>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <supplier-insights-big-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-big-chart>
+        <supplier-insights-line-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-line-chart>
       </div>
     </div>
     <div class="row">

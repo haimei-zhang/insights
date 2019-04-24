@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'supplier-insights-purchase-orders',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PurchaseOrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
@@ -16,15 +17,9 @@ export class PurchaseOrdersComponent implements OnInit {
     return {
       title: 'Weekly Order Value - Completed / Pending',
       chartId: 'weekly-order-value-chart',
-      legend: {data: ['Completed', 'Pending']},
-      xAxis: {
-        type: 'category',
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      },
-      yAxis: {
-        name: 'order value',
-        type: 'value'
-      },
+      height: '400px',
+      legend: ['Completed', 'Pending'],
+      xAxis: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       series: [{
         name: 'Completed',
         data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
