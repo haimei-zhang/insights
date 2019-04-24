@@ -10,37 +10,212 @@
   </div>
   <div class="main-inner py-4 px-2">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row mb-2">
         <div class="col-md-4">
-          <div class="card">
-            <div class="card-body p-0">
-              <h5 class="card-title p-3 mb-0">
-                Chart 1
-              </h5>
-              <google-chart [type]="'BarChart'" [data]="chart1.data" [columnNames]="chart1.cols" [options]="chart1.options" style="width: 100%; min-height: 300px;"></google-chart>
+          <a class="link-card" routerLink="/purchase-orders">
+            <div class="card">
+              <div class="card-body p-0">
+                <h5 class="card-title p-3">
+                  Purchase Orders
+                </h5>
+                <div class="card-text px-2">
+                  <table class="table table-sm mb-2">
+                    <thead>
+                      <tr>
+                        <th>&nbsp;</th>
+                        <th>Count</th>
+                        <th>Amount</th>
+                        <th>Variance</th>
+                      </tr>
+                    </thead>
+                    <tr *ngFor="let entry of purchaseOrderData">
+                      <td>{{entry.status}}</td>
+                      <td>{{entry.count}}</td>
+                      <td>{{entry.amount}}</td>
+                      <td>{{entry.variance}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-md-4">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">
-                Chart 2
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                On and Off Catalogue Orders
               </h5>
-              <div class="card-text">
-
+              <div class="card-text px-2">
+                <table class="table table-sm mb-2">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>Count</th>
+                      <th>Amount</th>
+                      <th>Variance</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let entry of catalogueOrderData">
+                    <td>{{entry.status}}</td>
+                    <td>{{entry.count}}</td>
+                    <td>{{entry.amount}}</td>
+                    <td>{{entry.variance}}</td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">
-                Chart 3
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Invoices
               </h5>
-              <div class="card-text">
-
+              <div class="card-text px-2">
+                <table class="table table-sm mb-2">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>Count</th>
+                      <th>Amount</th>
+                      <th>Variance</th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let entry of invoiceData">
+                    <td>{{entry.status}}</td>
+                    <td>{{entry.count}}</td>
+                    <td>{{entry.amount}}</td>
+                    <td>{{entry.variance}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6 large-data-col">
+          <a class="link-card" routerLink="purchase-orders">
+            <div class="card">
+              <div class="card-body p-0">
+                <h5 class="card-title p-3">
+                  Savings On List Price
+                </h5>
+                <table class="table text-center large-data-table">
+                  <thead>
+                    <tr>
+                      <th><h5>Total Catalogue Order Value</h5></th>
+                      <th><h5>Total Catalogue Order Value at List Price</h5></th>
+                      <th><h5>Total Savings</h5></th>
+                      <th><h5>Total Percentage Savings</h5></th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>£392,071.01</td>
+                    <td>£392,071.01</td>
+                    <td>0.00</td>
+                    <td>0.00%</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 large-data-col">
+          <a class="link-card" routerLink="purchase-orders">
+            <div class="card">
+              <div class="card-body p-0">
+                <h5 class="card-title p-3">
+                  Marketplace Activity
+                </h5>
+                <table class="table text-center large-data-table">
+                  <thead>
+                    <tr>
+                      <th><h5>Search Response Time</h5></th>
+                      <th><h5>Total Searches</h5></th>
+                      <th><h5>Active Users</h5></th>
+                      <th><h5>New Users</h5></th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>0.09</td>
+                    <td>16</td>
+                    <td>2</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <td>Seconds</td>
+                    <td>-67.35%</td>
+                    <td>-77.78%</td>
+                    <td>-100.00%</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Weekly Order Value - Completed Orders
+              </h5>
+              <div class="card-text px-2">
+                <google-chart [type]="'LineChart'" [data]="weeklyOrdersData.data" [columnNames]="weeklyOrdersData.columnNames" [options]="weeklyOrdersData.options" style="width: 100%; min-height: 400px;" [ngClass]="{ 'mb-2': true }"></google-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Highest Spend Categories
+              </h5>
+              <div class="card-text px-2">
+                <google-chart [type]="'BarChart'" [data]="topSpendCategories.data" [columnNames]="topSpendCategories.cols" [options]="topSpendCategories.options" style="width: 100%; height: 100%;" [ngClass]="{ 'mb-2': true }"></google-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Highest Spend Products
+              </h5>
+              <div class="card-text px-2">
+                <google-chart [type]="'BarChart'" [data]="topSpendProducts.data" [columnNames]="topSpendProducts.cols" [options]="topSpendProducts.options" style="width: 100%; height: 100%;" [ngClass]="{ 'mb-2': true }"></google-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Highest Spend Suppliers
+              </h5>
+              <div class="card-text px-2">
+                <google-chart [type]="'BarChart'" [data]="topSpendSuppliers.data" [columnNames]="topSpendSuppliers.cols" [options]="topSpendSuppliers.options" style="width: 100%; height: 100%;" [ngClass]="{ 'mb-2': true }"></google-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3">
+                Highest Spend Business Units
+              </h5>
+              <div class="card-text px-2">
+                <google-chart [type]="'BarChart'" [data]="topSpendBusinessUnits.data" [columnNames]="topSpendBusinessUnits.cols" [options]="topSpendBusinessUnits.options" style="width: 100%; height: 100%;" [ngClass]="{ 'mb-2': true }"></google-chart>
               </div>
             </div>
           </div>
