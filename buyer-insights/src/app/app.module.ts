@@ -10,13 +10,15 @@ import { MosaicIconsComponent } from './components/mosaic-icons/mosaic-icons.com
 import { FooterComponent } from './components/footer/footer.component';
 import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 import { from } from 'rxjs';
+import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MosaicIconsComponent,
     FooterComponent,
-    KpiDashboardComponent
+    KpiDashboardComponent,
+    PurchaseOrdersComponent
   ],
   imports: [
     BrowserModule,

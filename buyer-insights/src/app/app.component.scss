@@ -11,12 +11,6 @@
   .icon {
     transition: transform .3s ease;
   }
-
-  &.active {
-    .icon {
-      transform: rotate(180deg);
-    }
-  }
 }
 
 .main-container {
