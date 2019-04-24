@@ -1,0 +1,81 @@
+<div class="on-off-catalogue-orders">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">On/Off Catalogue Orders</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <label for="customer">Customer</label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="date-period">Date Period</label>
+            <input type="text" class="form-control" id="date-period" name="date-period">
+          </div>
+          <div class="col-3">
+            <label for="currency">Currency</label>
+            <select name="currency" id="currency" class="form-control">
+              <option value="">£</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label class="d-block">&nbsp;</label>
+            <button class="btn btn-info">Apply filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          Weekly Order Value - On / Off Catalogue
+        </h4>
+        <div class="card-text">
+          <div id="weekly-order-value-chart" style="width: 100%; min-height: 400px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-title">On and Off Catalogue Revenue by Customer</div>
+        <div class="card-text">
+          <div class="mb-2">
+            <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                          (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+            <div class="float-right">
+              <button class="btn btn-primary">Export Table</button>
+            </div>
+          </div>
+          <table class="table table-bordered">
+            <tr>
+              <th>Customer</th>
+              <th>On Catalogue Order Value</th>
+              <th>PO's Containing Catalogue Items</th>
+              <th>Off Catalogue Order Value</th>
+              <th>PO's Containing Off-Catalogue Items</th>
+              <th>Percentage of Order Value On Catalogue</th>
+            </tr>
+            <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+              <td>Regression Purchase Requisition 2.0 company</td>
+              <td>2982.25</td>
+              <td>34</td>
+              <td>3205097.53</td>
+              <td>29</td>
+              <td>0.09%</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

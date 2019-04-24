@@ -12,10 +12,10 @@
           <span class="hamburger-inner"></span>
         </span>
       </button>
-      <div class="navbar-collapse-sidebar" id="navbar-minimum-collapse">
+      <div class="collapse navbar-collapse" id="navbar-minimum-collapse">
         <ul class="navbar-sidebar-toggle nav">
           <li class="nav-item">
-            <a class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()" [ngClass]="active">
+            <a href="javascript:void(0)" [ngClass]="{'is-active': sidebarToggled}" class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
               <svg class="icon">
                 <title>Toggle menu</title>
                 <use xlink:href="#arrows_long_left" href="#arrows_long_left"></use>

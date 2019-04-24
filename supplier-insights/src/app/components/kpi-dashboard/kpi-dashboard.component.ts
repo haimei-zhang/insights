@@ -9,6 +9,8 @@ import * as echarts from 'echarts'
 })
 export class KpiDashboardComponent implements OnInit {
 
+  minHeight = '180px';
+
   constructor() { }
 
   ngOnInit() {
@@ -19,10 +21,12 @@ export class KpiDashboardComponent implements OnInit {
     this.initTopCategoriesChart();
     this.initTopProductsChart();
     this.initTopCustomersChart();
+    this.initMarketShareByCategoryChart();
+    this.initWeeklyOrderValueChart();
   }
 
   initTopCategoriesChart(): void {
-    const chart:any = document.getElementById('top-categories-chart');
+    const chart: any = document.getElementById('top-categories-chart');
     const topCategoriesChart = echarts.init(chart);
     let option: any = {
       dataset: {
@@ -45,7 +49,7 @@ export class KpiDashboardComponent implements OnInit {
           type: 'shadow'
         }
       },
-      grid: {containLabel: true, left: 0, right: 0, bottom: 0, top: 0},
+      grid: {containLabel: true, left: '3%', right: '3%', bottom: 0, top: '3%'},
       xAxis: {name: 'amount'},
       yAxis: {type: 'category', axisLabel: {rotate: 0, index: 999, inside: true}, data: [123,456,678,789,890,567,678], name: 'categories'},
       series: [
@@ -67,7 +71,7 @@ export class KpiDashboardComponent implements OnInit {
   }
 
   initTopProductsChart(): void {
-    const chart:any = document.getElementById('top-products-chart');
+    const chart: any = document.getElementById('top-products-chart');
     const topProductsChart: any = echarts.init(chart);
     let option = {
       tooltip: {
@@ -77,10 +81,10 @@ export class KpiDashboardComponent implements OnInit {
         }
       },
       grid: {
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
+        left: '3%',
+        right: '3%',
+        bottom: '3%',
+        top: '3%',
         containLabel: true
       },
       xAxis: {
@@ -103,7 +107,7 @@ export class KpiDashboardComponent implements OnInit {
   }
 
   initTopCustomersChart(): void {
-    const chart:any = document.getElementById('top-customers-chart');
+    const chart: any = document.getElementById('top-customers-chart');
     const topCustomersChart: any = echarts.init(chart);
     let option = {
       tooltip: {
@@ -113,10 +117,10 @@ export class KpiDashboardComponent implements OnInit {
         }
       },
       grid: {
-        left: 0,
-        right: 0,
-        bottom: 0,
-        top: 0,
+        left: '3%',
+        right: '3%',
+        bottom: '3%',
+        top: '3%',
         containLabel: true
       },
       xAxis: {
@@ -136,6 +140,129 @@ export class KpiDashboardComponent implements OnInit {
       ]
     };
     topCustomersChart.setOption(option);
+  }
+
+  initMarketShareByCategoryChart(): void {
+    const chart: any = document.getElementById('market-share-by-category-chart');
+    const marketShareByCategoryChart: any = echarts.init(chart);
+    let option = {
+      tooltip : {
+        trigger: 'axis',
+        axisPointer : {
+          type : 'shadow'
+        },
+        /*formatter: function (params) {
+          var tar;
+          if (params[1].value != '-') {
+            tar = params[1];
+          }
+          else {
+            tar = params[0];
+          }
+          return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+        }*/
+      },
+      legend: {
+        data:['data 1','data 2']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        top: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type : 'category',
+        splitLine: {show:false},
+        data :  function (){
+          let list = [];
+          for (let i = 1; i <= 11; i++) {
+            list.push(i + ' Nov');
+          }
+          return list;
+        }()
+      },
+      yAxis: {
+        type : 'value'
+      },
+      series: [
+        {
+          name: 'test',
+          type: 'bar',
+          stack: 'Total',
+          itemStyle: {
+            normal: {
+              barBorderColor: 'rgba(0,0,0,0)',
+              color: 'rgba(0,0,0,0)'
+            },
+            emphasis: {
+              barBorderColor: 'rgba(0,0,0,0)',
+              color: 'rgba(0,0,0,0)'
+            }
+          },
+          data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+        },
+        {
+          name: 'data 1',
+          type: 'bar',
+          stack: 'Total',
+          label: {
+            normal: {
+              show: true,
+              position: 'top'
+            }
+          },
+          data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
+        },
+        {
+          name: 'data 2',
+          type: 'bar',
+          stack: 'Total',
+          label: {
+            normal: {
+              show: true,
+              position: 'bottom'
+            }
+          },
+          data: ['-', '-', '-', 108, 154, '-', '-', '-', 119, 361, 203]
+        }
+      ]
+    };
+    marketShareByCategoryChart.setOption(option);
+
+  }
+
+  initWeeklyOrderValueChart(): void {
+    const chart: any = document.getElementById('weekly-order-value-chart');
+    const weeklyOrderValueChart: any = echarts.init(chart);
+    let option = {
+      legend: {data: ['This Year', 'Last Year']},
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'line'
+        }
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [{
+        name: 'This Year',
+        data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
+        type: 'line'
+      },
+        {
+          name: 'Last Year',
+          data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
+          type: 'line'
+        }]
+    };
+    weeklyOrderValueChart.setOption(option);
   }
 
 }
