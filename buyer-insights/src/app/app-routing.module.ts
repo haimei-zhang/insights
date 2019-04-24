@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 
 const routes: Routes = [
+  { path: 'kpi-dashboard', component: KpiDashboardComponent },
   { path: '**', component: KpiDashboardComponent }
 ];
 
