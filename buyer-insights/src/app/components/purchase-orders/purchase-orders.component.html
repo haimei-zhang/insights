@@ -97,7 +97,15 @@
             <div class="card-text px-2">
               <div class="container-fluid">
                 <div class="row">
-                  <div class="col-12"></div>
+                  <div class="col-12">
+                    <buyer-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                      (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></buyer-insights-pagination>
+                      <div class="float-right">
+                        <button class="btn btn-advanced mr-2">Export Purchase Orders (.csv)</button>
+                        <button class="btn btn-advanced mr-2">Export Order Lines (.csv)</button>
+                        <button class="btn btn-advanced">Custom Order Lines Export</button>
+                      </div>
+                  </div>
                 </div>
                 <div class="row">
                   <table class="table table-striped table-sm">

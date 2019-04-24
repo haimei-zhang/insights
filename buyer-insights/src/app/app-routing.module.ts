@@ -5,8 +5,8 @@ import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.
 import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
 
 const routes: Routes = [
-  { path: 'kpi-dashboard', component: KpiDashboardComponent },
-  { path: 'purchase-orders', component: PurchaseOrdersComponent },
+  { path: 'kpi-dashboard', component: KpiDashboardComponent, data: { animation: 'HomePage' } },
+  { path: 'purchase-orders', component: PurchaseOrdersComponent, data: { animation: 'DetailPage' } },
   { path: '**', component: KpiDashboardComponent }
 ];
 
