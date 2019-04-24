@@ -19,17 +19,11 @@ export class PurchaseOrdersComponent implements OnInit {
     this.initWeeklyOrderValueChart();
   }
 
-  initWeeklyOrderValueChart(): void {
-    const chart: any = document.getElementById('weekly-order-value-chart');
-    const weeklyOrderValueChart: any = echarts.init(chart);
-    let option = {
+  initWeeklyOrderValueChart(): any {
+    return {
+      title: 'Weekly Order Value - Completed / Pending',
+      chartId: 'weekly-order-value-chart',
       legend: {data: ['Completed', 'Pending']},
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'line'
-        }
-      },
       xAxis: {
         type: 'category',
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -49,7 +43,6 @@ export class PurchaseOrdersComponent implements OnInit {
           type: 'line'
         }]
     };
-    weeklyOrderValueChart.setOption(option);
   }
 
   changePage(page, execute): void {

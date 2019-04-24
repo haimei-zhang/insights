@@ -7,11 +7,9 @@ import { BsDropdownModule, PaginationModule } from "ngx-bootstrap";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { MosaicIconsComponent } from './components/mosaic-icons/mosaic-icons.component';
 import { KpiDashboardComponent } from './components/kpi-dashboard/kpi-dashboard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PurchaseOrdersComponent } from './components/purchase-orders/purchase-orders.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { OnOffCatalogueOrdersComponent } from './components/on-off-catalogue-orders/on-off-catalogue-orders.component';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { TopCategoriesComponent } from './components/top-categories/top-categories.component';
@@ -22,6 +20,8 @@ import { SearchInsightsComponent } from './components/search-insights/search-ins
 import { SearchTermInsightsComponent } from './components/search-term-insights/search-term-insights.component';
 import { ListPriceDiscountComponent } from './components/list-price-discount/list-price-discount.component';
 
+import { PaginationComponent } from './elements/pagination/pagination.component';
+import { MosaicIconsComponent } from './elements/mosaic-icons/mosaic-icons.component';
 import { BigChartComponent } from './elements/big-chart/big-chart.component';
 import { SmallChartComponent } from './elements/small-chart/small-chart.component';
 import { OrderTableComponent } from './elements/order-table/order-table.component';
@@ -29,11 +29,9 @@ import { OrderTableComponent } from './elements/order-table/order-table.componen
 @NgModule({
   declarations: [
     AppComponent,
-    MosaicIconsComponent,
     KpiDashboardComponent,
     FooterComponent,
     PurchaseOrdersComponent,
-    PaginationComponent,
     OnOffCatalogueOrdersComponent,
     InvoicesComponent,
     TopCategoriesComponent,
@@ -43,6 +41,8 @@ import { OrderTableComponent } from './elements/order-table/order-table.componen
     SearchInsightsComponent,
     SearchTermInsightsComponent,
     ListPriceDiscountComponent,
+    MosaicIconsComponent,
+    PaginationComponent,
     BigChartComponent,
     SmallChartComponent,
     OrderTableComponent

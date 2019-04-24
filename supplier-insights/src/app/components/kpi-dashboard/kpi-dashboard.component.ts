@@ -113,6 +113,7 @@ export class KpiDashboardComponent implements OnInit {
     return {
       title: 'Weekly Order Value - Completed Orders',
       chartId: 'weekly-order-value-chart',
+      legend: {data: ['This Year', 'Last Year']},
       xAxis: {
         type: 'category',
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']

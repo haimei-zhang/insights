@@ -36,6 +36,7 @@ export class BigChartComponent implements OnInit {
           type: this.options.tooltipType
         }
       },
+      legend: this.options.legend,
       grid: {
         left: '3%',
         right: '3%',
