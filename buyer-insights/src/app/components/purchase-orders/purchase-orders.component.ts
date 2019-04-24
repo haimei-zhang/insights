@@ -68,4 +68,12 @@ export class PurchaseOrdersComponent implements OnInit {
     }
   }
 
+  changePage(page, execute): void {
+    console.log(page);
+  }
+
+  setPageSize(page): void {
+    console.log(page)
+  }
+
 }

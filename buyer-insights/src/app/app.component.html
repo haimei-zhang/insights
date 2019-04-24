@@ -162,8 +162,8 @@
   
       <!--main content-->
       <div class="main-container" [ngClass]="{ 'pull-left-toggle': sidebarToggled }">
-        <div class="app-wrapper">
-          <router-outlet></router-outlet>
+        <div class="app-wrapper" [@routeAnimations]="prepareRoute(outlet)">
+          <router-outlet #outlet="outlet"></router-outlet>
         </div>
         <buyer-insights-footer></buyer-insights-footer>
       </div>
