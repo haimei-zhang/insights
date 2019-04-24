@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as echarts from 'echarts'
-
 @Component({
   selector: 'app-kpi-dashboard',
   templateUrl: './kpi-dashboard.component.html',
@@ -14,163 +12,57 @@ export class KpiDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initCharts();
   }
 
-  initCharts(): void {
-    this.initTopCategoriesChart();
-    this.initTopProductsChart();
-    this.initTopCustomersChart();
-    this.initMarketShareByCategoryChart();
-    this.initWeeklyOrderValueChart();
-  }
-
-  initTopCategoriesChart(): void {
-    const chart: any = document.getElementById('top-categories-chart');
-    const topCategoriesChart = echarts.init(chart);
-    let option: any = {
-      dataset: {
-        source: [
-          ['amount', 'product'],
-          [58212, 'Matcha Latte'],
-          [78254, 'Milk Tea'],
-          [41032, 'Cheese Cocoa'],
-          [12755, 'Cheese Brownie'],
-          [20145, 'Matcha Cocoa'],
-          [79146, 'Tea'],
-          [91852, 'Orange Juice'],
-          [101852, 'Lemon Juice'],
-          [20112, 'Walnut Brownie']
-        ]
-      },
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      grid: {containLabel: true, left: '3%', right: '3%', bottom: 0, top: '3%'},
-      xAxis: {name: 'amount'},
-      yAxis: {type: 'category', axisLabel: {rotate: 0, index: 999, inside: true}, data: [123,456,678,789,890,567,678], name: 'categories'},
-      series: [
-        {
-          type: 'bar',
-          encode: {
-            // Map the "amount" column to X axis.
-            x: 'amount',
-            // Map the "product" column to Y axis
-            y: 'product'
-          },
-          name: 'categories',
-          data: [123,456,678,789,890,567,678]
-         // label: {show: true}
-        }
-      ]
+  initTopCategoriesChart(): any {
+    return {
+      title: 'Top Categories',
+      chartId: 'top-categories-chart',
+      tooltipType: 'shadow',
+      xAxis: {type: 'value',},
+      yAxis: {type: 'category', data: [123,456,678,789,890,567,678]},
+      series: [{
+        type: 'bar',
+        data: [18203, 23489, 29034, 104970, 131744, 630230, 98756]
+      }]
     };
-    topCategoriesChart.setOption(option);
   }
 
-  initTopProductsChart(): void {
-    const chart: any = document.getElementById('top-products-chart');
-    const topProductsChart: any = echarts.init(chart);
-    let option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '3%',
-        bottom: '3%',
-        top: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'value',
-        boundaryGap: [0, 0.01]
-      },
-      yAxis: {
-        type: 'category',
-        data: ['test1','test2','test3','test4','test5','all'],
-        axisLabel: {rotate: 0}
-      },
-      series: [
-        {
-          type: 'bar',
-          data: [18203, 23489, 29034, 104970, 131744, 630230]
-        }
-      ]
+  initTopProductsChart(): any {
+    return {
+      title: 'Top Products',
+      chartId: 'top-products-chart',
+      tooltipType: 'shadow',
+      xAxis: {type: 'value'},
+      yAxis: {type: 'category', data: ['test1','test2','test3','test4','test5','all']},
+      series: [{
+        type: 'bar',
+        data: [18203, 23489, 29034, 104970, 131744, 630230]
+      }]
     };
-    topProductsChart.setOption(option);
   }
 
-  initTopCustomersChart(): void {
-    const chart: any = document.getElementById('top-customers-chart');
-    const topCustomersChart: any = echarts.init(chart);
-    let option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        }
-      },
-      grid: {
-        left: '3%',
-        right: '3%',
-        bottom: '3%',
-        top: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'value',
-        boundaryGap: [0, 0.01]
-      },
-      yAxis: {
-        type: 'category',
-        data: ['test1','test2','test3','test4','test5','all'],
-        axisLabel: {rotate: 0}
-      },
-      series: [
-        {
-          type: 'bar',
-          data: [18203, 104970, 29034, 23489, 131744, 630230]
-        }
-      ]
+  initTopCustomersChart(): any {
+    return {
+      title: 'Top Customers',
+      chartId: 'top-customers-chart',
+      tooltipType: 'shadow',
+      xAxis: {type: 'value'},
+      yAxis: {type: 'category', data: ['test1','test2','test3','test4','test5','all']},
+      series: [{
+        type: 'bar',
+        data: [18203, 104970, 29034, 23489, 131744, 630230]
+      }]
     };
-    topCustomersChart.setOption(option);
   }
 
-  initMarketShareByCategoryChart(): void {
-    const chart: any = document.getElementById('market-share-by-category-chart');
-    const marketShareByCategoryChart: any = echarts.init(chart);
-    let option = {
-      tooltip : {
-        trigger: 'axis',
-        axisPointer : {
-          type : 'shadow'
-        },
-        /*formatter: function (params) {
-          var tar;
-          if (params[1].value != '-') {
-            tar = params[1];
-          }
-          else {
-            tar = params[0];
-          }
-          return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
-        }*/
-      },
+  initMarketShareByCategoryChart(): any {
+    return {
+      title: 'Market Share by Category',
+      chartId: 'market-share-by-category-chart',
+      tooltipType: 'shadow',
       legend: {
-        data:['data 1','data 2']
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        top: '3%',
-        containLabel: true
+        data: ['data 1','data 2']
       },
       xAxis: {
         type : 'category',
@@ -183,14 +75,12 @@ export class KpiDashboardComponent implements OnInit {
           return list;
         }()
       },
-      yAxis: {
-        type : 'value'
-      },
+      yAxis: {type: 'value'},
       series: [
         {
-          name: 'test',
+          name: 'Total',
           type: 'bar',
-          stack: 'Total',
+          stack: 'total',
           itemStyle: {
             normal: {
               barBorderColor: 'rgba(0,0,0,0)',
@@ -206,44 +96,23 @@ export class KpiDashboardComponent implements OnInit {
         {
           name: 'data 1',
           type: 'bar',
-          stack: 'Total',
-          label: {
-            normal: {
-              show: true,
-              position: 'top'
-            }
-          },
+          stack: 'total',
           data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
         },
         {
           name: 'data 2',
           type: 'bar',
-          stack: 'Total',
-          label: {
-            normal: {
-              show: true,
-              position: 'bottom'
-            }
-          },
+          stack: 'total',
           data: ['-', '-', '-', 108, 154, '-', '-', '-', 119, 361, 203]
         }
       ]
     };
-    marketShareByCategoryChart.setOption(option);
-
   }
 
-  initWeeklyOrderValueChart(): void {
-    const chart: any = document.getElementById('weekly-order-value-chart');
-    const weeklyOrderValueChart: any = echarts.init(chart);
-    let option = {
-      legend: {data: ['This Year', 'Last Year']},
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'line'
-        }
-      },
+  initWeeklyOrderValueChart(): any {
+    return {
+      title: 'Weekly Order Value - Completed Orders',
+      chartId: 'weekly-order-value-chart',
       xAxis: {
         type: 'category',
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -262,7 +131,22 @@ export class KpiDashboardComponent implements OnInit {
           type: 'line'
         }]
     };
-    weeklyOrderValueChart.setOption(option);
+  }
+
+  initPurchaseOrdersTable(): any {
+    return [{status: 'Completed', count: 71, amount: 3226338.15, variance: '4827.61%'},
+      {status: 'Pending', count: 71, amount: 3226338.15, variance: '4827.61%'}];
+  }
+
+  initOnOffCatalogueOrdersTable(): any {
+    return [{status: 'On Catalogue', count: 71, amount: 3226338.15, variance: '4827.61%'},
+      {status: 'Off Catalogue', count: 71, amount: 3226338.15, variance: '4827.61%'}];
+  }
+
+  initInvoiceTable(): any {
+    return [{status: 'Created', count: 71, amount: 3226338.15, variance: '4827.61%'},
+      {status: 'Sent', count: 71, amount: 3226338.15, variance: '4827.61%'},
+      {status: 'Rejected', count: 71, amount: 3226338.15, variance: '4827.61%'}];
   }
 
 }

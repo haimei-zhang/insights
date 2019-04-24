@@ -6,6 +6,7 @@ import { PurchaseOrdersComponent } from "./components/purchase-orders/purchase-o
 import { OnOffCatalogueOrdersComponent } from "./components/on-off-catalogue-orders/on-off-catalogue-orders.component";
 
 const routes: Routes = [
+  { path: '', redirectTo: '/kpi-dashboard', pathMatch: 'full' },
   { path: 'kpi-dashboard', component: KpiDashboardComponent},
   { path: 'purchase-orders', component: PurchaseOrdersComponent},
   { path: 'on-off-catalogue-orders', component: OnOffCatalogueOrdersComponent}

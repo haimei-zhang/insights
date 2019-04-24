@@ -3,136 +3,25 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Top Categories</h4>
-            <div class="card-text">
-              <div id="top-categories-chart" style="width:100%; min-height: 210px"></div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-small-chart [options]="initTopCategoriesChart()"></supplier-insights-small-chart>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Top Products</h4>
-            <div class="card-text">
-              <div id="top-products-chart" style="width:100%; min-height: 210px"></div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-small-chart [options]="initTopProductsChart()"></supplier-insights-small-chart>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Top Customers</h4>
-            <div class="card-text">
-              <div id="top-customers-chart" style="width:100%; min-height: 210px"></div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-small-chart [options]="initTopCustomersChart()"></supplier-insights-small-chart>
       </div>
     </div>
     <hr>
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Purchase Orders</h4>
-            <div class="card-text">
-              <div [ngStyle]="{'min-height': minHeight}">
-                <table class="table">
-                  <tr>
-                    <th></th>
-                    <th>Count</th>
-                    <th>Amount</th>
-                    <th>Variance</th>
-                  </tr>
-                  <tr>
-                    <td>Completed</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                  <tr>
-                    <td>Pending</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-order-table [title]="'Purchase Orders'" [minHeight]="minHeight" [items]="initPurchaseOrdersTable()"></supplier-insights-order-table>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">On and Off Catalogue Orders</h4>
-            <div class="card-text">
-              <div [ngStyle]="{'min-height': minHeight}">
-                <table class="table">
-                  <tr>
-                    <th></th>
-                    <th>Count</th>
-                    <th>Amount</th>
-                    <th>Variance</th>
-                  </tr>
-                  <tr>
-                    <td>On Catalogue</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                  <tr>
-                    <td>Off Catalogue</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-order-table [title]="'On and Off Catalogue Orders'" [minHeight]="minHeight" [items]="initOnOffCatalogueOrdersTable()"></supplier-insights-order-table>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Invoices</h4>
-            <div class="card-text">
-              <div [ngStyle]="{'min-height': minHeight}">
-                <table class="table">
-                  <tr>
-                    <th></th>
-                    <th>Count</th>
-                    <th>Amount</th>
-                    <th>Variance</th>
-                  </tr>
-                  <tr>
-                    <td>Created</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                  <tr>
-                    <td>Sent</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                  <tr>
-                    <td>Rejected</td>
-                    <td>71</td>
-                    <td>3226338.15</td>
-                    <td>4827.61%</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-order-table [items]="initInvoiceTable()" [minHeight]="minHeight" [title]="'Invoices'"></supplier-insights-order-table>
       </div>
     </div>
     <div class="row">
@@ -174,26 +63,12 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Market Share by Category</h4>
-            <div class="card-text">
-              <div id="market-share-by-category-chart" style="width: 100%; min-height: 210px;"></div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-small-chart [options]="initMarketShareByCategoryChart()"></supplier-insights-small-chart>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Weekly Order Value - Completed Orders</h2>
-            <div class="card-text">
-              <div id="weekly-order-value-chart" style="width: 100%; min-height: 400px;"></div>
-            </div>
-          </div>
-        </div>
+        <supplier-insights-big-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-big-chart>
       </div>
     </div>
     <div class="row">
