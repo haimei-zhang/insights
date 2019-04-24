@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as echarts from 'echarts';
-
 @Component({
   selector: 'supplier-insights-purchase-orders',
   templateUrl: './purchase-orders.component.html',
@@ -12,11 +10,6 @@ export class PurchaseOrdersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.initChart();
-  }
-
-  initChart(): void {
-    this.initWeeklyOrderValueChart();
   }
 
   initWeeklyOrderValueChart(): any {

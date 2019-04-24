@@ -12,17 +12,17 @@
       <div class="card-body">
         <div class="row">
           <div class="col-3">
-            <label for="customer">Customer</label>
+            <label for="customer"><b>Customer</b></label>
             <select name="customer" id="customer" class="form-control">
               <option value="">All</option>
             </select>
           </div>
           <div class="col-3">
-            <label for="date-period">Date Period</label>
+            <label for="date-period"><b>Date Period</b></label>
             <input type="text" class="form-control" id="date-period" name="date-period">
           </div>
           <div class="col-3">
-            <label for="currency">Currency</label>
+            <label for="currency"><b>Currency</b></label>
             <select name="currency" id="currency" class="form-control">
               <option value="">£</option>
               <option value=""></option>
@@ -38,7 +38,7 @@
     <supplier-insights-big-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-big-chart>
     <div class="card">
       <div class="card-body">
-        <div class="card-title">On and Off Catalogue Revenue by Customer</div>
+        <h4 class="card-title">On and Off Catalogue Revenue by Customer</h4>
         <div class="card-text">
           <div class="mb-2">
             <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
