@@ -7,4 +7,18 @@
 
 .menu-toggle {
   cursor: pointer;
+
+  .icon {
+    transition: transform .3s ease;
+  }
+
+  &.active {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.main-container {
+  background: url('../assets/images/pattern_triangular.png') left top no-repeat #f6f6f6;
 }

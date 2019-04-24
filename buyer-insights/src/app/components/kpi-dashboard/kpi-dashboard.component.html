@@ -1,3 +1,51 @@
-<p>
-  kpi-dashboard works!
-</p>
+<section>
+  <div class="jumbotron jumbotron-fluid bg-white text-dark border-bottom px-2 py-4 mb-0">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-sm">
+          <h1 class="mb-0">KPI Dashboard</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-inner py-4 px-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body p-0">
+              <h5 class="card-title p-3 mb-0">
+                Chart 1
+              </h5>
+              <google-chart [type]="'BarChart'" [data]="chart1.data" [columnNames]="chart1.cols" [options]="chart1.options" style="width: 100%; min-height: 300px;"></google-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                Chart 2
+              </h5>
+              <div class="card-text">
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">
+                Chart 3
+              </h5>
+              <div class="card-text">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

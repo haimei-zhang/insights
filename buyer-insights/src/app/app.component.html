@@ -15,7 +15,7 @@
       <div class="navbar-collapse-sidebar" id="navbar-minimum-collapse">
         <ul class="navbar-sidebar-toggle nav">
           <li class="nav-item">
-            <a class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()">
+            <a class="nav-link d-flex menu-toggle" tabindex="0" role="button" (click)="toggleSidebar()" [ngClass]="active">
               <svg class="icon">
                 <title>Toggle menu</title>
                 <use xlink:href="#arrows_long_left" href="#arrows_long_left"></use>
@@ -51,7 +51,7 @@
           <div class="nav-sidebar w-100">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a href="#" class="d-flex nav-link">
+                <a routerLink="kpi-dashboard" routerLinkActive="active" class="d-flex nav-link">
                   <div>KPI Dashboard</div>
                 </a>
               </li>
