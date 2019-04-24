@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'supplier-insights-on-off-catalogue-orders',
-  templateUrl: './on-off-catalogue-orders.component.html',
-  styleUrls: ['./on-off-catalogue-orders.component.scss']
+  selector: 'supplier-insights-invoices',
+  templateUrl: './invoices.component.html',
+  styleUrls: ['./invoices.component.scss']
 })
-export class OnOffCatalogueOrdersComponent implements OnInit {
+export class InvoicesComponent implements OnInit {
 
   constructor() { }
 
@@ -14,9 +14,9 @@ export class OnOffCatalogueOrdersComponent implements OnInit {
 
   initWeeklyOrderValueChart(): any {
     return {
-      title: 'Weekly Order Value - On / Off Catalogue',
-      chartId: 'weekly-order-value-chart',
-      legend: {data: ['On Catalogue', 'Off Catalogue']},
+      title: 'Weekly Invoice Value - Sent / Rejected',
+      chartId: 'weekly-invoice-value-chart',
+      legend: {data: ['Invoices Sent', 'Invoices Rejected']},
       xAxis: {
         type: 'category',
         data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -26,12 +26,12 @@ export class OnOffCatalogueOrdersComponent implements OnInit {
         type: 'value'
       },
       series: [{
-        name: 'On Catalogue',
+        name: 'Invoices Sent',
         data: [820, 932, 901, 934, 1290, 1330, 1320, 343, 537, 346, 344, 245],
         type: 'line'
       },
         {
-          name: 'Off Catalogue',
+          name: 'Invoices Rejected',
           data: [123, 55, 666, 789, 456, 234, 555, 475, 358, 864, 222, 647],
           type: 'line'
         }]

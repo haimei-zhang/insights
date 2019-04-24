@@ -13,30 +13,30 @@
       <div class="card-body">
         <div class="row">
           <div class="col-2">
-            <label for="customer">Customer</label>
+            <label for="customer"><b>Customer</b></label>
             <select name="customer" id="customer" class="form-control">
               <option value="">All</option>
             </select>
           </div>
           <div class="col-2">
-            <label for="date-period">Date Period</label>
+            <label for="date-period"><b>Date Period</b></label>
             <input type="text" class="form-control" id="date-period" name="date-period">
           </div>
           <div class="col-2">
-            <label for="category">Category</label>
+            <label for="category"><b>Category</b></label>
             <select name="category" id="category" class="form-control">
               <option value="">All</option>
             </select>
           </div>
           <div class="col-2">
-            <label for="currency">Currency</label>
+            <label for="currency"><b>Currency</b></label>
             <select name="currency" id="currency" class="form-control">
               <option value="">£</option>
               <option value=""></option>
             </select>
           </div>
           <div class="col-2">
-            <label for="order-status">Order Status</label>
+            <label for="order-status"><b>Order Status</b></label>
             <select name="order-status" id="order-status" class="form-control">
               <option value="">All</option>
             </select>
@@ -48,16 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title">
-          Weekly Order Value - Completed / Pending
-        </h4>
-        <div class="card-text">
-          <div id="weekly-order-value-chart" style="width: 100%; min-height: 400px"></div>
-        </div>
-      </div>
-    </div>
+    <supplier-insights-big-chart [options]="initWeeklyOrderValueChart()"></supplier-insights-big-chart>
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Purchase Order List</h4>
