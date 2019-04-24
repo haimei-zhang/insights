@@ -41,13 +41,12 @@ export class BarChartComponent implements OnInit, AfterViewInit {
         left: '3%',
         right: '3%',
         bottom: '3%',
+        top: '3%',
         containLabel: true
       },
       xAxis: {type: 'value'},
       yAxis: {type: 'category', data: this.options.yAxis},
-      series: (() => {
-        return [{type: 'bar', data: this.options.series}]
-      })()
+      series: [{type: 'bar', data: this.options.series}]
     };
     eCharts.setOption(option);
   }
