@@ -50,11 +50,16 @@ $handle-width: 6;
 a.link-card {
   color: initial;
 
+  .card {
+    border: 1px solid transparent !important;
+    transition: border-color .4s ease;
+  }
+
   &:hover {
     text-decoration: none;
 
     .card {
-      border: 1px solid #333;
+      border: 1px solid $advanced !important;
 
       .card-title {
         background: #333;

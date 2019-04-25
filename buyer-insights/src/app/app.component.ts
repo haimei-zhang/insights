@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { fadeInAnimation } from './animations';
 
@@ -13,6 +13,7 @@ import { fadeInAnimation } from './animations';
 export class AppComponent {
   title = 'buyer-insights';
   sidebarToggled = false;
+  pageTitle = 'KPI Dashboard';
 
   toggleSidebar(): void {
     this.sidebarToggled = !this.sidebarToggled;
@@ -20,5 +21,9 @@ export class AppComponent {
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  changePageTitle(title) {
+    this.pageTitle = title;
   }
 }

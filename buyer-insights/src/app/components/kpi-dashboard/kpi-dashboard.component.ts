@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'buyer-insights-kpi-dashboard',
   templateUrl: './kpi-dashboard.component.html',
   styleUrls: ['./kpi-dashboard.component.scss']
 })
-export class KpiDashboardComponent implements OnInit {
+export class KpiDashboardComponent implements OnInit, AfterViewInit {
   weeklyOrdersData: any;
   topSpendCategories = {
     name: 'topSpendCategories',
@@ -94,7 +94,7 @@ export class KpiDashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.initCharts();
   }
 
