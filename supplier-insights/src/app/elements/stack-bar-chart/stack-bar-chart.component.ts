@@ -40,7 +40,7 @@ export class StackBarChartComponent implements OnInit, AfterViewInit {
       },
       toolbox: {
         feature: {
-          magicType: {show: true, type: ['line', 'bar','stack', 'tiled'], title: {line: 'Line Chart', bar: 'Bar Chart', stack: 'Stack Chart', tiled: 'Tiled Chart'}},
+          magicType: {show: true, type: ['stack', 'tiled'], title: {line: 'Line Chart', bar: 'Bar Chart', stack: 'Stack Chart', tiled: 'Tiled Chart'}},
           restore: {title: 'Restore'},
           saveAsImage: {title: 'Save'}
         }
