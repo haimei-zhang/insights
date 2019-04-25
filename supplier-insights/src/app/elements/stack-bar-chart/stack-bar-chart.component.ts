@@ -17,6 +17,8 @@ export class StackBarChartComponent implements OnInit, AfterViewInit {
     series: []
   };
 
+  @Input() datePeriod: string;
+
   constructor() { }
 
   ngOnInit() {

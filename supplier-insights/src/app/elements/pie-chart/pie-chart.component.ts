@@ -16,6 +16,8 @@ export class PieChartComponent implements OnInit, AfterViewInit {
     series: []
   };
 
+  @Input() datePeriod: string;
+
   constructor() { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class PieChartComponent implements OnInit, AfterViewInit {
     let option = {
       tooltip: {
         trigger: 'item',
-        formatter: "{a} <br/>{b}: {c} ({d}%)"
+        formatter: "{b}: <br/> {c} ({d}%)"
       },
       legend: {
         orient: 'horizontal',
@@ -44,7 +46,7 @@ export class PieChartComponent implements OnInit, AfterViewInit {
           name: this.options.title,
           type:'pie',
           center: ['50%', '65%'],
-          radius: ['50%', '70%'],
+          radius: ['25%', '70%'],
           // avoidLabelOverlap: false,
           label: {
             normal: {
@@ -56,7 +58,8 @@ export class PieChartComponent implements OnInit, AfterViewInit {
               textStyle: {
                 fontSize: '18',
                 fontWeight: 'bold'
-              }
+              },
+              formatter: '{d}%'
             }
           },
           data: this.options.series

@@ -10,6 +10,7 @@ export class OrderTableComponent implements OnInit {
   @Input() title: string;
   @Input() minHeight: string;
   @Input() items: any;
+  @Input() datePeriod: string;
 
   constructor() { }
 

@@ -17,6 +17,8 @@ export class LineChartComponent implements OnInit, AfterViewInit {
     series: []
   };
 
+  @Input() datePeriod: string;
+
   constructor() { }
 
   ngOnInit() {

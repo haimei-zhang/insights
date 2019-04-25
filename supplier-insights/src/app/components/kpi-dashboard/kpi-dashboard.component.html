@@ -2,33 +2,33 @@
   <h2 class="page-header">KPI Dashboard</h2>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-bar-chart [options]="initTopCategoriesChart()"></supplier-insights-bar-chart>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/top-categories">
+        <supplier-insights-bar-chart [options]="initTopCategoriesChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-bar-chart [options]="initTopProductsChart()"></supplier-insights-bar-chart>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/top-products">
+        <supplier-insights-bar-chart [options]="initTopProductsChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-bar-chart [options]="initTopCustomersChart()"></supplier-insights-bar-chart>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/top-customers">
+        <supplier-insights-bar-chart [options]="initTopCustomersChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
       </div>
     </div>
     <hr>
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-order-table [title]="'Purchase Orders'" [minHeight]="minHeight" [items]="initPurchaseOrdersTable()"></supplier-insights-order-table>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/purchase-orders">
+        <supplier-insights-order-table [title]="'Purchase Orders'" [minHeight]="minHeight" [items]="initPurchaseOrdersTable()"  [datePeriod]="'1 Year'"></supplier-insights-order-table>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-order-table [title]="'On and Off Catalogue Orders'" [minHeight]="minHeight" [items]="initOnOffCatalogueOrdersTable()"></supplier-insights-order-table>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/on-off-catalogue-orders">
+        <supplier-insights-order-table [title]="'On and Off Catalogue Orders'" [minHeight]="minHeight" [items]="initOnOffCatalogueOrdersTable()"  [datePeriod]="'1 Year'"></supplier-insights-order-table>
       </div>
-      <div class="col-sm-12 col-md-6 col-lg-4">
-        <supplier-insights-order-table [items]="initInvoiceTable()" [minHeight]="minHeight" [title]="'Invoices'"></supplier-insights-order-table>
+      <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/invoices">
+        <supplier-insights-order-table [items]="initInvoiceTable()" [minHeight]="minHeight" [title]="'Invoices'"  [datePeriod]="'1 Year'"></supplier-insights-order-table>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12 col-md-6">
-        <div class="card">
+      <div class="col-sm-12 col-md-6 link-card">
+        <div class="card" routerLink="/search-insights">
           <div class="card-body">
-            <h4 class="card-title">Search Insights</h4>
+            <h4 class="card-title">Search Insights <span class="float-right label label-primary">30 Days</span></h4>
             <div class="card-text">
               <div [ngStyle]="{'min-height': minHeight}">
                 <table class="table">
@@ -62,8 +62,8 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-6">
-        <supplier-insights-stack-bar-chart [options]="initMarketShareByCategoryChart()"></supplier-insights-stack-bar-chart>
+      <div class="col-sm-12 col-md-6 link-card" routerLink="/market-share">
+        <supplier-insights-stack-bar-chart [options]="initMarketShareByCategoryChart()" [datePeriod]="'1 Year'"></supplier-insights-stack-bar-chart>
       </div>
     </div>
     <div class="row">
@@ -72,10 +72,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-12">
-        <div class="card">
+      <div class="col-sm-12 link-card">
+        <div class="card" routerLink="/list-price-discount">
           <div class="card-body">
-            <h4 class="card-title">Discount on List Price</h4>
+            <h4 class="card-title">Discount on List Price <span class="float-right label label-primary">1 Year</span></h4>
             <div class="card-text">
               <table class="table table-borderless text-center table-layout-fixed">
                 <tr>

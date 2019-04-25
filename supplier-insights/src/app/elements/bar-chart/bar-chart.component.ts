@@ -17,6 +17,8 @@ export class BarChartComponent implements OnInit, AfterViewInit {
     series: []
   };
 
+  @Input() datePeriod: string;
+
   constructor() { }
 
   ngOnInit() {
