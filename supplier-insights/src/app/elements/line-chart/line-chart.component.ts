@@ -38,6 +38,14 @@ export class LineChartComponent implements OnInit, AfterViewInit {
           type: 'line'
         }
       },
+      toolbox: {
+        top: '5%',
+        feature: {
+          magicType: {show: true, type: ['line', 'bar'], title: {line: 'Line Chart', bar: 'Bar Chart'}},
+          restore: {title: 'Restore'},
+          saveAsImage: {title: 'Save'}
+        }
+      },
       legend: {data: this.options.legend, icon: 'roundRect'},
       grid: {
         left: '3%',

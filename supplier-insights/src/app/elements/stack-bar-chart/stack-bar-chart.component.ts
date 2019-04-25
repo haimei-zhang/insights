@@ -38,6 +38,13 @@ export class StackBarChartComponent implements OnInit, AfterViewInit {
           type: 'shadow'
         }
       },
+      toolbox: {
+        feature: {
+          magicType: {show: true, type: ['line', 'bar','stack', 'tiled'], title: {line: 'Line Chart', bar: 'Bar Chart', stack: 'Stack Chart', tiled: 'Tiled Chart'}},
+          restore: {title: 'Restore'},
+          saveAsImage: {title: 'Save'}
+        }
+      },
       legend: {data: this.options.legend},
       grid: {
         left: '3%',

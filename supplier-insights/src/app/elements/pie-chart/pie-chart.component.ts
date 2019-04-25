@@ -35,6 +35,12 @@ export class PieChartComponent implements OnInit, AfterViewInit {
         trigger: 'item',
         formatter: "{b}: <br/> {c} ({d}%)"
       },
+      toolbox: {
+        feature: {
+          saveAsImage: {title: 'Save'}
+        },
+        bottom: 0
+      },
       legend: {
         orient: 'horizontal',
         x: 'left',

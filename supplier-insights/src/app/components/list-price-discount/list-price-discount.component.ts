@@ -15,7 +15,7 @@ export class ListPriceDiscountComponent implements OnInit {
   initListPriceDiscountByCustomerChart(): any {
     return {
       title: 'List Price Discount By Customer',
-      height: '400px',
+      height: '210px',
       chartId: 'list-price-discount-by-customer-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
@@ -25,7 +25,7 @@ export class ListPriceDiscountComponent implements OnInit {
   initListPriceDiscountByCategoryChart(): any {
     return {
       title: 'List Price Discount By Category',
-      height: '400px',
+      height: '210px',
       chartId: 'list-price-discount-by-category-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
@@ -35,7 +35,7 @@ export class ListPriceDiscountComponent implements OnInit {
   initListPriceDiscountByProductChart(): any {
     return {
       title: 'List Price Discount By Product',
-      height: '400px',
+      height: '210px',
       chartId: 'list-price-discount-by-product-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
