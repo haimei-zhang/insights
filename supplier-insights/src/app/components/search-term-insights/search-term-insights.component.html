@@ -1,3 +1,68 @@
-<p>
-  search-term-insights works!
-</p>
+<div class="search-term-insights">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="#" routerLink="/search-insights">Search Insights</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Search Term Insights</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Top Search Categories <button class="btn btn-primary float-right">Export All Categories</button></h4>
+            <div class="card-text">
+              <div [ngStyle]="{'min-height': minHeight}">
+                <table class="table">
+                  <tr>
+                    <th>Category Name</th>
+                    <th>Searches that Returned Products in this Category</th>
+                    <th>Your Order Value - 12 Months</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+
+                    </td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Top Search Terms - All Categories <button class="btn btn-primary float-right">Export Top Search Terms</button></h4>
+            <div class="card-text">
+              <div [ngStyle]="{'min-height': minHeight}">
+                <table class="table">
+                  <tr>
+                    <th>Search Term</th>
+                    <th>Number of Times Search Term Used</th>
+                    <th>Number of Times Your Product Visible in Results</th>
+                    <th>Number of Times Your Product was First in Results</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <supplier-insights-line-chart [options]="initWeeklySearchesChart()"></supplier-insights-line-chart>
+  </div>
+</div>

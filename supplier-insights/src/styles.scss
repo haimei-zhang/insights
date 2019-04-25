@@ -29,8 +29,8 @@ $handle-width: 6;
 
 .card {
   border: 1px solid #dee2e6;
-  border-radius: .8rem;
-  box-shadow: 0 4px 4px -2px rgba(0,0,0,.25);
+  /*border-radius: .8rem;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,.25);*/
   transition: all .3s ease;
   margin-bottom: 20px;
 
@@ -42,7 +42,7 @@ $handle-width: 6;
     background: #f2f2f2;
     margin-bottom: .8rem;
     border-bottom: 1px solid #dee2e6;
-    border-radius: .8rem .8rem 0 0;
+    /*border-radius: .8rem .8rem 0 0;*/
     transition: background .3s ease;
     padding: 20px;
   }
