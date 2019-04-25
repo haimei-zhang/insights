@@ -1,3 +1,211 @@
-<p>
-  list-price-discount works!
-</p>
+<div class="list-price-discount">
+  <div class="page-header__title">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/kpi-dashboard">KPI Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Discount on List Price</li>
+      </ol>
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="card filter-card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-3">
+            <label for="customer"><b>Customer</b></label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <label for="date-period"><b>Date Period</b></label>
+            <input type="text" class="form-control" id="date-period" name="date-period">
+          </div>
+          <div class="col-3">
+            <label for="category"><b>Category</b></label>
+            <select name="category" id="category" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-1">
+            <label for="currency"><b>Currency</b></label>
+            <select name="currency" id="currency" class="form-control">
+              <option value="">£</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-2">
+            <label class="d-block">&nbsp;</label>
+            <button class="btn btn-info">Apply filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Discount Summary</h4>
+        <div class="card-text">
+          <table class="table table-borderless text-center table-layout-fixed">
+            <tr>
+              <td class="border-right">Total Catalogue Order Value</td>
+              <td class="border-right">Total Catalogue Order Value at List Price</td>
+              <td class="border-right">Total Discount</td>
+              <td>Total Percentage Discount</td>
+            </tr>
+            <tr>
+              <th class="border-right"><h3>9590.44</h3></th>
+              <th class="border-right"><h3>9575.33</h3></th>
+              <th class="border-right"><h3>-11.11</h3></th>
+              <th><h3>-0.12%</h3></th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-bar-chart [options]="initListPriceDiscountByCustomerChart()"></supplier-insights-bar-chart>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-bar-chart [options]="initListPriceDiscountByCategoryChart()"></supplier-insights-bar-chart>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <supplier-insights-bar-chart [options]="initListPriceDiscountByProductChart()"></supplier-insights-bar-chart>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Discount on List Price Tables
+            <button class="btn btn-primary float-right">Export Tables</button>
+        </h4>
+        <div class="card-text">
+          <tabset>
+            <tab heading="Customers">
+              <table class="table table-bordered">
+                <tr class="bg-light">
+                  <th>Customer</th>
+                  <th>Actions</th>
+                  <th>Percentage of Total Spend</th>
+                  <th>Total Catalogue Order Lines</th>
+                  <th>Total Catalogue Order Value</th>
+                  <th>Total Order Value at List Price</th>
+                  <th>Discount Value</th>
+                  <th>Discount Percentage</th>
+                  <th>Change in Discount Percentage</th>
+                </tr>
+                <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+                  <td>Regression Zelease Test eRequisition</td>
+                  <td class="text-center"><a href=""><svg width="18" height="18"><use xlink:href="#filter" href="#filter"></use></svg></a></td>
+                  <td class="text-center">53.26%</td>
+                  <td class="text-right">13</td>
+                  <td class="text-right">5,108.20</td>
+                  <td class="text-right">5,108.20</td>
+                  <td class="text-right">0.00</td>
+                  <td class="text-center">0.00%</td>
+                  <td class="text-center text-success">0.00% <svg width="18" height="18"><use xlink:href="#arrow-alt-circle-up" href="#arrow-alt-circle-up"></use></svg></td>
+                </tr>
+                <tr class="bg-light">
+                  <th>Totals:</th>
+                  <th></th>
+                  <th></th>
+                  <th class="text-right">119</th>
+                  <th class="text-right">9590.44</th>
+                  <th class="text-right">9579.33</th>
+                  <th class="text-right">-11.11</th>
+                  <th class="text-center">-0.12%</th>
+                  <th class="text-center">-0.12%</th>
+                </tr>
+              </table>
+              <div class="text-center">
+                <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                              (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+              </div>
+            </tab>
+            <tab heading="Categories">
+              <table class="table table-bordered">
+                <tr class="bg-light">
+                  <th>Category Name</th>
+                  <th>Actions</th>
+                  <th>Percentage of Total Spend</th>
+                  <th>Total Catalogue Order Lines</th>
+                  <th>Total Catalogue Order Value</th>
+                  <th>Total Order Value at List Price</th>
+                  <th>Discount Value</th>
+                  <th>Discount Percentage</th>
+                  <th>Change in Discount Percentage</th>
+                </tr>
+                <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+                  <td>Regression Zelease Test eRequisition</td>
+                  <td class="text-center"><a href=""><svg width="18" height="18"><use xlink:href="#filter" href="#filter"></use></svg></a></td>
+                  <td class="text-center">53.26%</td>
+                  <td class="text-right">13</td>
+                  <td class="text-right">5,108.20</td>
+                  <td class="text-right">5,108.20</td>
+                  <td class="text-right">0.00</td>
+                  <td class="text-center">0.00%</td>
+                  <td class="text-center text-success">0.00% <svg width="18" height="18"><use xlink:href="#arrow-alt-circle-up" href="#arrow-alt-circle-up"></use></svg></td>
+                </tr>
+                <tr class="bg-light">
+                  <th>Totals:</th>
+                  <th></th>
+                  <th></th>
+                  <th class="text-right">119</th>
+                  <th class="text-right">9590.44</th>
+                  <th class="text-right">9579.33</th>
+                  <th class="text-right">-11.11</th>
+                  <th class="text-center">-0.12%</th>
+                  <th class="text-center">-0.12%</th>
+                </tr>
+              </table>
+              <div class="text-center">
+                <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                              (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+              </div>
+            </tab>
+            <tab heading="Products">
+              <table class="table table-bordered">
+                <tr class="bg-light">
+                  <th>Catalogue Number</th>
+                  <th>Product Description</th>
+                  <th>Manufacturer Name</th>
+                  <th>Quantity Ordered</th>
+                  <th>Total Catalogue Order Value</th>
+                  <th>Total Order Value at List Price</th>
+                  <th>Discount Value</th>
+                  <th>Discount Percentage</th>
+                  <th>Actions</th>
+                </tr>
+                <tr *ngFor="let i of [1,2,3,4,5,6,7,8,9,0]">
+                  <td>TM090518</td>
+                  <td>Product Item 19</td>
+                  <td>Regression Zelease Test Supplier DO NOT CHANGE</td>
+                  <td class="text-right">356</td>
+                  <td class="text-right">2,710.17	</td>
+                  <td class="text-right">2,710.17</td>
+                  <td class="text-right">0.00</td>
+                  <td class="text-center">0.00%</td>
+                  <td class="text-center"><a href=""><svg width="18" height="18"><use xlink:href="#clone" href="#clone"></use></svg></a></td>
+                </tr>
+                <tr class="bg-light">
+                  <th>Totals:</th>
+                  <th></th>
+                  <th></th>
+                  <th class="text-right">119</th>
+                  <th class="text-right">9590.44</th>
+                  <th class="text-right">9579.33</th>
+                  <th class="text-right">-11.11</th>
+                  <th class="text-center">-0.12%</th>
+                  <th class="text-center"></th>
+                </tr>
+              </table>
+              <div class="text-center">
+                <supplier-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                                              (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></supplier-insights-pagination>
+              </div>
+            </tab>
+          </tabset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

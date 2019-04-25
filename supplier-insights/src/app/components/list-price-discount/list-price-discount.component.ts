@@ -12,4 +12,42 @@ export class ListPriceDiscountComponent implements OnInit {
   ngOnInit() {
   }
 
+  initListPriceDiscountByCustomerChart(): any {
+    return {
+      title: 'List Price Discount By Customer',
+      height: '400px',
+      chartId: 'list-price-discount-by-customer-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+    };
+  }
+
+  initListPriceDiscountByCategoryChart(): any {
+    return {
+      title: 'List Price Discount By Category',
+      height: '400px',
+      chartId: 'list-price-discount-by-category-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+    };
+  }
+
+  initListPriceDiscountByProductChart(): any {
+    return {
+      title: 'List Price Discount By Product',
+      height: '400px',
+      chartId: 'list-price-discount-by-product-chart',
+      yAxis: ['test1','test2','test3','test4','test5','all'],
+      series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
+    };
+  }
+
+  changePage(page, execute): void {
+    console.log(page);
+  }
+
+  setPageSize(page): void {
+    console.log(page)
+  }
+
 }
