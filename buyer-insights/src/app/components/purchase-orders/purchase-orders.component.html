@@ -1,145 +1,136 @@
-<section>
-    <div class="jumbotron jumbotron-fluid bg-white text-dark border-bottom px-2 py-4 mb-0">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-sm">
-            <h1 class="mb-0">Purchase Orders</h1>
+
+<mosaic-page-header title="Purchase Orders"></mosaic-page-header>
+<div class="main-inner py-4 px-2">
+  <div class="container-fluid">
+    <div class="card mb-2">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-2">
+            <label for="customer">Supplier</label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <label for="date-period">Date Period</label>
+            <input type="text" class="form-control" id="date-period" name="date-period">
+          </div>
+          <div class="col-2">
+            <label for="currency">Currency</label>
+            <select name="currency" id="currency" class="form-control">
+              <option value="">£</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-2">
+            <label for="customer">Order Status</label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <label for="customer">Data Level</label>
+            <select name="customer" id="customer" class="form-control">
+              <option value="">Company</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <label class="d-block">&nbsp;</label>
+            <button class="btn btn-primary">Apply filters</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="main-inner py-4 px-2">
-      <div class="container-fluid">
-        <div class="card mb-2">
-          <div class="card-body">
+
+    <div class="card mb-2">
+      <div class="card-body p-0">
+        <h4 class="card-title p-3">
+          Summary Figures
+        </h4>
+        <div class="card-text">
+          <table class="table text-center large-data-table">
+            <thead>
+              <tr>
+                <th><h5>Total Completed Orders</h5></th>
+                <th><h5>Total Completed Order Lines</h5></th>
+                <th><h5>Total Completed Order Value</h5></th>
+                <th><h5>Total Pending Orders</h5></th>
+                <th><h5>Total Cancelled Orders</h5></th>
+              </tr>
+            </thead>
+            <tr>
+              <td>198</td>
+              <td>410</td>
+              <td>436,428.90</td>
+              <td>78</td>
+              <td>2</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-2">
+      <div class="card-body p-0">
+        <h4 class="card-title p-3 mb-0">
+          Weekly Order Value - Completed / Pending
+        </h4>
+        <div class="card-text px-2">
+          <google-chart [type]="'LineChart'" [data]="weeklyOrdersData.data" [columnNames]="weeklyOrdersData.columnNames" [options]="weeklyOrdersData.options" style="width: 100%; min-height: 400px;" [ngClass]="{ 'mb-2': true }"></google-chart>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card mb-2">
+      <div class="card-body p-0">
+        <h4 class="card-title p-3">
+          Purchase Order List
+        </h4>
+        <div class="card-text px-2">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col-2">
-                <label for="customer">Supplier</label>
-                <select name="customer" id="customer" class="form-control">
-                  <option value="">All</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <label for="date-period">Date Period</label>
-                <input type="text" class="form-control" id="date-period" name="date-period">
-              </div>
-              <div class="col-2">
-                <label for="currency">Currency</label>
-                <select name="currency" id="currency" class="form-control">
-                  <option value="">£</option>
-                  <option value=""></option>
-                </select>
-              </div>
-              <div class="col-2">
-                <label for="customer">Order Status</label>
-                <select name="customer" id="customer" class="form-control">
-                  <option value="">All</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <label for="customer">Data Level</label>
-                <select name="customer" id="customer" class="form-control">
-                  <option value="">Company</option>
-                </select>
-              </div>
-              <div class="col-2">
-                <label class="d-block">&nbsp;</label>
-                <button class="btn btn-primary">Apply filters</button>
+              <div class="col-12">
+                <buyer-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                  (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></buyer-insights-pagination>
+                  <div class="float-right">
+                    <button class="btn btn-advanced mr-2">Export Purchase Orders (.csv)</button>
+                    <button class="btn btn-advanced mr-2">Export Order Lines (.csv)</button>
+                    <button class="btn btn-advanced">Custom Order Lines Export</button>
+                  </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div class="card mb-2">
-          <div class="card-body p-0">
-            <h4 class="card-title p-3">
-              Summary Figures
-            </h4>
-            <div class="card-text">
-              <table class="table text-center large-data-table">
+            <div class="row">
+              <table class="table table-striped table-sm">
                 <thead>
                   <tr>
-                    <th><h5>Total Completed Orders</h5></th>
-                    <th><h5>Total Completed Order Lines</h5></th>
-                    <th><h5>Total Completed Order Value</h5></th>
-                    <th><h5>Total Pending Orders</h5></th>
-                    <th><h5>Total Cancelled Orders</h5></th>
+                    <th>PO Date</th>
+                    <th>Supplier Company</th>
+                    <th>Supplier Email</th>
+                    <th>PO Number</th>
+                    <th>Order Total Value</th>
+                    <th>Order Status</th>
+                    <th>Invoice Number</th>
+                    <th class="table-actions">Actions</th>
                   </tr>
                 </thead>
-                <tr>
-                  <td>198</td>
-                  <td>410</td>
-                  <td>436,428.90</td>
-                  <td>78</td>
-                  <td>2</td>
+                <tr *ngFor="let po of purchaseOrderData">
+                  <td>{{po.date}}</td>
+                  <td>{{po.supplierComp}}</td>
+                  <td>{{po.supplierEmail}}</td>
+                  <td>{{po.num}}</td>
+                  <td>{{po.val}}</td>
+                  <td>{{po.status}}</td>
+                  <td>{{po.invNum}}</td>
+                  <td class="text-center">
+                    <a href="{{po.link}}"><svg class="icon" width="18" height="18"><use xlink:href="#view_file" href="#view_file"></use></svg></a>
+                  </td>
                 </tr>
               </table>
             </div>
           </div>
         </div>
-
-        <div class="card mb-2">
-          <div class="card-body p-0">
-            <h4 class="card-title p-3 mb-0">
-              Weekly Order Value - Completed / Pending
-            </h4>
-            <div class="card-text px-2">
-              <google-chart [type]="'LineChart'" [data]="weeklyOrdersData.data" [columnNames]="weeklyOrdersData.columnNames" [options]="weeklyOrdersData.options" style="width: 100%; min-height: 400px;" [ngClass]="{ 'mb-2': true }"></google-chart>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card mb-2">
-          <div class="card-body p-0">
-            <h4 class="card-title p-3">
-              Purchase Order List
-            </h4>
-            <div class="card-text px-2">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-12">
-                    <buyer-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
-                      (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></buyer-insights-pagination>
-                      <div class="float-right">
-                        <button class="btn btn-advanced mr-2">Export Purchase Orders (.csv)</button>
-                        <button class="btn btn-advanced mr-2">Export Order Lines (.csv)</button>
-                        <button class="btn btn-advanced">Custom Order Lines Export</button>
-                      </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <table class="table table-striped table-sm">
-                    <thead>
-                      <tr>
-                        <th>PO Date</th>
-                        <th>Supplier Company</th>
-                        <th>Supplier Email</th>
-                        <th>PO Number</th>
-                        <th>Order Total Value</th>
-                        <th>Order Status</th>
-                        <th>Invoice Number</th>
-                        <th class="table-actions">Actions</th>
-                      </tr>
-                    </thead>
-                    <tr *ngFor="let po of purchaseOrderData">
-                      <td>{{po.date}}</td>
-                      <td>{{po.supplierComp}}</td>
-                      <td>{{po.supplierEmail}}</td>
-                      <td>{{po.num}}</td>
-                      <td>{{po.val}}</td>
-                      <td>{{po.status}}</td>
-                      <td>{{po.invNum}}</td>
-                      <td class="text-center">
-                        <a href="{{po.link}}"><svg class="icon" width="18" height="18"><use xlink:href="#view_file" href="#view_file"></use></svg></a>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
+
+  </div>
+</div>

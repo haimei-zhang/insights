@@ -27,8 +27,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/@advanced/mosaic-styles/css/mosaic-no-fonts.css",
-              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
