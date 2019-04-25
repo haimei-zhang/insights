@@ -15,7 +15,7 @@ export class TopCategoriesComponent implements OnInit {
   initTopCategoriesByOrderValueChart(): any {
     return {
       title: 'Top Categories by Order Value',
-      height: '400px',
+      height: '210px',
       chartId: 'top-categories-by-order-value-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
@@ -25,7 +25,7 @@ export class TopCategoriesComponent implements OnInit {
   initTopCategoriesByOrderLinesChart(): any {
     return {
       title: 'Top Categories by Order Lines',
-      height: '400px',
+      height: '210px',
       chartId: 'top-categories-by-order-lines-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]

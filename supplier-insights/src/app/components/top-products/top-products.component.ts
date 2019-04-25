@@ -15,7 +15,7 @@ export class TopProductsComponent implements OnInit {
   initTopProductsByOrderValueChart(): any {
     return {
       title: 'Top Products by Order Value',
-      height: '400px',
+      height: '210px',
       chartId: 'top-products-by-order-value-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
@@ -25,7 +25,7 @@ export class TopProductsComponent implements OnInit {
   initTopProductsByOrderLinesChart(): any {
     return {
       title: 'Top Products by Order Lines',
-      height: '400px',
+      height: '210px',
       chartId: 'top-products-by-order-lines-chart',
       yAxis: ['test1','test2','test3','test4','test5','all'],
       series: [Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100), Math.floor(Math.random() * 100)]
