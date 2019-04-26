@@ -18,6 +18,7 @@ export class BarChartComponent implements OnInit, AfterViewInit {
   };
 
   @Input() datePeriod: string;
+  @Input() tooltipContent: any;
 
   constructor() { }
 

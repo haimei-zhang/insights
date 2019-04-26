@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 
-import { BsDropdownModule, PaginationModule, TabsModule } from "ngx-bootstrap";
+import { BsDropdownModule, PaginationModule, TabsModule, TooltipModule } from "ngx-bootstrap";
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -57,7 +57,8 @@ import { PieChartComponent } from './elements/pie-chart/pie-chart.component';
     FormsModule,
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    TooltipModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

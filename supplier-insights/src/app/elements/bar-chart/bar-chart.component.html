@@ -1,8 +1,11 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">{{options.title}} <span *ngIf="datePeriod" class="float-right label label-primary">{{datePeriod}}</span></h4>
+    <h4 class="card-title" placement="auto" [tooltip]="tooltipContent? helpTooltip: ''">{{options.title}}
+      <svg width="16" height="16"><use xlink:href="#question-circle" href="#question-circle"></use></svg>
+      <span *ngIf="datePeriod" class="float-right label label-primary">{{datePeriod}}</span></h4>
     <div class="card-text">
       <div [id]="options.chartId" style="width:100%" [ngStyle]="{'min-height': options.height}"></div>
     </div>
   </div>
 </div>
+<ng-template #helpTooltip><div [innerHtml]="tooltipContent"></div></ng-template>

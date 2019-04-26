@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/top-categories">
-        <supplier-insights-bar-chart [options]="initTopCategoriesChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
+        <supplier-insights-bar-chart [tooltipContent]="'test<br>test'" [options]="initTopCategoriesChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-4 link-card" routerLink="/top-products">
         <supplier-insights-bar-chart [options]="initTopProductsChart()" [datePeriod]="'1 Year'"></supplier-insights-bar-chart>
@@ -28,7 +28,9 @@
       <div class="col-sm-12 col-md-6 link-card">
         <div class="card" routerLink="/search-insights">
           <div class="card-body">
-            <h4 class="card-title">Search Insights <span class="float-right label label-primary">30 Days</span></h4>
+            <h4 class="card-title">Search Insights
+              <svg width="16" height="16"><use xlink:href="#question-circle" href="#question-circle"></use></svg>
+              <span class="float-right label label-primary">30 Days</span></h4>
             <div class="card-text">
               <div [ngStyle]="{'min-height': minHeight}">
                 <table class="table">

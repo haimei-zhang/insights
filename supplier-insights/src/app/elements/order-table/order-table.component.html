@@ -1,6 +1,7 @@
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">{{title}} <span *ngIf="datePeriod" class="float-right label label-primary">{{datePeriod}}</span></h4>
+    <h4 class="card-title">{{title}}
+      <span *ngIf="datePeriod" class="float-right label label-primary">{{datePeriod}}</span></h4>
     <div class="card-text">
       <div [ngStyle]="{'min-height': minHeight}">
         <table class="table">
@@ -8,10 +9,14 @@
             <th></th>
             <th>Count</th>
             <th>Amount</th>
-            <th>Variance</th>
+            <th>Variance
+              <svg width="16" height="16"><use xlink:href="#question-circle" href="#question-circle"></use></svg>
+            </th>
           </tr>
           <tr *ngFor="let item of items">
-            <td>{{item.status}}</td>
+            <td>{{item.status}}
+              <svg width="16" height="16"><use xlink:href="#question-circle" href="#question-circle"></use></svg>
+            </td>
             <td>{{item.count}}</td>
             <td>{{item.amount}}</td>
             <td>{{item.variance}}</td>
