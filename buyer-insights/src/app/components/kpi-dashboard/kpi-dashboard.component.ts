@@ -98,6 +98,10 @@ export class KpiDashboardComponent implements OnInit, AfterViewInit {
     this.initCharts();
   }
 
+  ngAfterViewInit() {
+    
+  }
+
   initCharts(): void {
     this.initBarChart(this.topSpendCategories.name, this.topSpendCategories.data, this.topSpendCategories.columns);
     this.initBarChart(this.topSpendProducts.name, this.topSpendProducts.data, this.topSpendProducts.columns);
