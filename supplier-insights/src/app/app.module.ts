@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { BsDropdownModule, PaginationModule, TabsModule, TooltipModule } from "ngx-bootstrap";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +29,8 @@ import { BarChartComponent } from './elements/bar-chart/bar-chart.component';
 import { LineChartComponent } from './elements/line-chart/line-chart.component';
 import { StackBarChartComponent } from './elements/stack-bar-chart/stack-bar-chart.component';
 import { PieChartComponent } from './elements/pie-chart/pie-chart.component';
+
+import { createTranslateLoader } from './utils/translate-loader.util';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,14 @@ import { PieChartComponent } from './elements/pie-chart/pie-chart.component';
     PaginationModule.forRoot(),
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
