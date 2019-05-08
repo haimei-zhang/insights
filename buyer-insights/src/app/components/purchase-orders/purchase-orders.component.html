@@ -2,45 +2,55 @@
 <mosaic-page-header title="Purchase Orders"></mosaic-page-header>
 <div class="main-inner py-4 px-2">
   <div class="container-fluid">
-    <div class="card mb-2">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-2">
-            <label for="customer">Supplier</label>
-            <select name="customer" id="customer" class="form-control">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="col-2">
-            <label for="date-period">Date Period</label>
-            <input type="text" class="form-control" id="date-period" name="date-period">
-          </div>
-          <div class="col-2">
-            <label for="currency">Currency</label>
-            <select name="currency" id="currency" class="form-control">
-              <option value="">£</option>
-              <option value=""></option>
-            </select>
-          </div>
-          <div class="col-2">
-            <label for="customer">Order Status</label>
-            <select name="customer" id="customer" class="form-control">
-              <option value="">All</option>
-            </select>
-          </div>
-          <div class="col-2">
-            <label for="customer">Data Level</label>
-            <select name="customer" id="customer" class="form-control">
-              <option value="">Company</option>
-            </select>
-          </div>
-          <div class="col-2">
-            <label class="d-block">&nbsp;</label>
-            <button class="btn btn-primary">Apply filters</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <mosaic-container>
+      <mosaic-card>
+        <mosaic-card-body>
+          <mosaic-form>
+            <mosaic-row>
+              <mosaic-col md="2" class="clearfix">
+                <mosaic-select-input name="customer" label="Supplier">
+                  <option value="">All</option>
+                  <option value="value 1">Value 1</option>
+                  <option value="value 2">Value 2</option>
+                  <option value="value 3">Value 3</option>
+                </mosaic-select-input>
+              </mosaic-col>
+              <mosaic-col md="2" class="clearfix">
+                <mosaic-datetime-picker name="date-period" label="Date Period" range></mosaic-datetime-picker>
+              </mosaic-col>
+              <mosaic-col md="2" class="clearfix">
+                <mosaic-select-input name="Currency" label="Currency">
+                  <option value="">£</option>
+                  <option value="value 1">Value 1</option>
+                  <option value="value 2">Value 2</option>
+                  <option value="value 3">Value 3</option>
+                </mosaic-select-input>
+              </mosaic-col>
+              <mosaic-col md="2" class="clearfix">
+                <mosaic-select-input name="order-status" label="Order Status">
+                  <option value="">All</option>
+                  <option value="value 1">Value 1</option>
+                  <option value="value 2">Value 2</option>
+                  <option value="value 3">Value 3</option>
+                </mosaic-select-input>
+              </mosaic-col>
+              <mosaic-col md="2" class="clearfix">
+                <mosaic-select-input name="data-level" label="Data Level">
+                  <option value="">Company</option>
+                  <option value="value 1">Value 1</option>
+                  <option value="value 2">Value 2</option>
+                  <option value="value 3">Value 3</option>
+                </mosaic-select-input>
+              </mosaic-col>
+              <mosaic-col md="2" class="clearfix">
+                <label for="" class="d-block">&nbsp;</label>
+                <mosaic-button color="primary" icon="checkmark">Apply filters</mosaic-button>
+              </mosaic-col>
+            </mosaic-row>
+          </mosaic-form>
+        </mosaic-card-body>
+      </mosaic-card>
+    </mosaic-container>
 
     <div class="card mb-2">
       <div class="card-body p-0">
