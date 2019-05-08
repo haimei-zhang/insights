@@ -1,10 +1,17 @@
-<div class="d-inline-block mr-2">
-  <pagination [totalItems]="totalItems" [(ngModel)]="page" [itemsPerPage]="itemsPerPage" [maxSize]="maxSize" (pageChanged)="changePage($event)" [boundaryLinks]="true" firstText="&laquo;" lastText="&raquo;" previousText="&#8249;" nextText="&#8250;"></pagination>
-</div>
-<select name="" id="" class="form-control d-inline-block" (change)="pageSizeChanged($event.target.value)">
-  <option value="10">10</option>
-  <option value="25">25</option>
-  <option value="50">50</option>
-  <option value="{{totalItems}}">All</option>
-</select>
-  
+<mosaic-row>
+  <mosaic-col md="3" class="clearfix">
+    <mosaic-pagination [totalItems]="totalItems" [(ngModel)]="page" [itemsPerPage]="itemsPerPage" (pageChanged)="changePage($event)"
+                      total-count="totalItems"
+                      page-size="itemsPerPage"
+                      visible-page-count="5"
+                      start-page="1"></mosaic-pagination>
+  </mosaic-col>
+  <mosaic-col md="1" class="clearfix">
+    <mosaic-select-input name="" (change)="pageSizeChanged($event.target.value)">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="{{totalItems}}">All</option>
+    </mosaic-select-input>
+  </mosaic-col>
+</mosaic-row>

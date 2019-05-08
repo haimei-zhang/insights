@@ -50,15 +50,11 @@
           </mosaic-form>
         </mosaic-card-body>
       </mosaic-card>
-    </mosaic-container>
 
-    <div class="card mb-2">
-      <div class="card-body p-0">
-        <h4 class="card-title p-3">
-          Summary Figures
-        </h4>
-        <div class="card-text">
-          <table class="table text-center large-data-table">
+      <mosaic-card>
+        <mosaic-card-header title="Summary Figures"></mosaic-card-header>
+        <mosaic-card-body>
+          <table class="table text-center large-data-table w-100">
             <thead>
               <tr>
                 <th><h5>Total Completed Orders</h5></th>
@@ -76,41 +72,34 @@
               <td>2</td>
             </tr>
           </table>
-        </div>
-      </div>
-    </div>
+        </mosaic-card-body>
+      </mosaic-card>
 
-    <div class="card mb-2">
-      <div class="card-body p-0">
-        <h4 class="card-title p-3 mb-0">
-          Weekly Order Value - Completed / Pending
-        </h4>
-        <div class="card-text px-2">
-          <google-chart [type]="'LineChart'" [data]="weeklyOrdersData.data" [columnNames]="weeklyOrdersData.columnNames" [options]="weeklyOrdersData.options" style="width: 100%; min-height: 400px;" [ngClass]="{ 'mb-2': true }"></google-chart>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card mb-2">
-      <div class="card-body p-0">
-        <h4 class="card-title p-3">
-          Purchase Order List
-        </h4>
-        <div class="card-text px-2">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12">
-                <buyer-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
-                  (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></buyer-insights-pagination>
-                  <div class="float-right">
-                    <button class="btn btn-advanced mr-2">Export Purchase Orders (.csv)</button>
-                    <button class="btn btn-advanced mr-2">Export Order Lines (.csv)</button>
-                    <button class="btn btn-advanced">Custom Order Lines Export</button>
-                  </div>
-              </div>
-            </div>
-            <div class="row">
-              <table class="table table-striped table-sm">
+      <mosaic-card>
+        <mosaic-card-header title="Weekly Order Value - Completed / Pending"></mosaic-card-header>
+        <mosaic-card-body>
+          <google-chart [type]="'LineChart'" [data]="weeklyOrdersData.data" [columnNames]="weeklyOrdersData.columnNames" [options]="weeklyOrdersData.options" style="width: 95%; min-height: 400px;" [ngClass]="{ 'mb-2': true }"></google-chart>
+        </mosaic-card-body>
+      </mosaic-card>
+
+      <mosaic-card>
+        <mosaic-card-header title="Purchase Order List">
+          <mosaic-button-group spaced>
+            <mosaic-button color="primary" icon="export">Export Purchase Orders (.csv)</mosaic-button>
+            <mosaic-button color="primary" icon="export">Export Order Lines (.csv)</mosaic-button>
+            <mosaic-button color="advanced" icon="plus">Custom Order Lines Export</mosaic-button>
+          </mosaic-button-group>
+        </mosaic-card-header>
+        <mosaic-card-body>
+          <mosaic-row>
+            <mosaic-col sm="12">
+              <buyer-insights-pagination [totalItems]="100" [page]="1" [itemsPerPage]="10" [maxSize]="5"
+                (pageChanged)="changePage($event, true)" (setPageSize)="setPageSize($event)"></buyer-insights-pagination>
+            </mosaic-col>
+          </mosaic-row>
+          <mosaic-row>
+            <mosaic-table striped bordered hover class="w-100">
+              <table>
                 <thead>
                   <tr>
                     <th>PO Date</th>
@@ -132,15 +121,15 @@
                   <td>{{po.status}}</td>
                   <td>{{po.invNum}}</td>
                   <td class="text-center">
-                    <a href="{{po.link}}"><svg class="icon" width="18" height="18"><use xlink:href="#view_file" href="#view_file"></use></svg></a>
+                    <a href="{{po.link}}"><mosaic-icon name="view_file" width="18" height="18" class="d-inline"></mosaic-icon></a>
                   </td>
                 </tr>
               </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </mosaic-table>
+          </mosaic-row>
+        </mosaic-card-body>
+      </mosaic-card>
+    </mosaic-container>
 
   </div>
 </div>
